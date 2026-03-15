@@ -1035,17 +1035,17 @@ function unlockReport() {
   }
   try { localStorage.setItem('ikiru_email', email); } catch(e) {}
 
-  // ConvertKit
+  // ConvertKit -- using no-cors form submission
   var ckFormId = '9209638';
   var ckApiKey = '67Bgy9dPsqsi4a-aBIra6Q';
+  var ckData = new FormData();
+  ckData.append('api_key', ckApiKey);
+  ckData.append('email', email);
   fetch('https://api.convertkit.com/v3/forms/' + ckFormId + '/subscribe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      api_key: ckApiKey,
-      email: email,
-      fields: { primary_disruption: result ? result.primary : 'unknown' }
-    })
+    mode: 'no-cors',
+    body: JSON.stringify({ api_key: ckApiKey, email: email })
   }).catch(function() {});
 
   buildLP();
