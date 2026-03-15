@@ -1034,6 +1034,20 @@ function unlockReport() {
     return;
   }
   try { localStorage.setItem('ikiru_email', email); } catch(e) {}
+
+  // ConvertKit
+  var ckFormId = '9209638';
+  var ckApiKey = '67Bgy9dPsqsi4a-aBIra6Q';
+  fetch('https://api.convertkit.com/v3/forms/' + ckFormId + '/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      api_key: ckApiKey,
+      email: email,
+      fields: { primary_disruption: result ? result.primary : 'unknown' }
+    })
+  }).catch(function() {});
+
   buildLP();
   showPage('p-lp');
   initLPAnimations();
