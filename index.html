@@ -7,340 +7,379 @@
 <title>IKIRU — Find Your Imbalance</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Old+Mincho:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #F5F0E8;
-  color: #1C1A17;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── PAGE SYSTEM ── */
-.page { display: none; }
-.page.active { display: flex; flex-direction: column; min-height: 100vh; }
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'DM Sans',sans-serif;background:#F5F0E8;color:#1C1A17;-webkit-font-smoothing:antialiased}
+.page{display:none}
+.page.active{display:flex;flex-direction:column;min-height:100vh}
 
 /* ── INTRO ── */
-#p-intro {
-background: #F5F0E8;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 40px 28px;
+#p-intro{background:#F5F0E8;align-items:center;justify-content:center;text-align:center;padding:40px 28px}
+.brand{font-family:‘Cormorant Garamond’,serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#9B7E4B;margin-bottom:16px}
+.kanji-big{font-family:‘Zen Old Mincho’,serif;font-size:100px;font-weight:900;color:#1C1A17;line-height:1;margin-bottom:8px}
+.tagline{font-family:‘Cormorant Garamond’,serif;font-size:13px;color:#9B7E4B;margin-bottom:16px;letter-spacing:1px}
+.headline{font-family:‘Cormorant Garamond’,serif;font-size:32px;font-weight:300;line-height:1.2;margin-bottom:4px}
+.subhead{font-family:‘Cormorant Garamond’,serif;font-size:13px;font-style:italic;color:#7A7468;margin-bottom:4px}
+.framework{font-size:11px;color:#9B7E4B;letter-spacing:1px;margin-bottom:20px}
+.pillars{display:flex;border:1px solid rgba(28,26,23,.12);max-width:260px;margin:0 auto 16px}
+.pillar{flex:1;padding:8px 4px;text-align:center;border-right:1px solid rgba(28,26,23,.1)}
+.pillar:last-child{border-right:none}
+.pillar-code{font-size:9px;letter-spacing:2px;color:#7A7468;display:block;margin-bottom:2px}
+.pillar-k{font-family:‘Zen Old Mincho’,serif;font-size:16px;color:#1C1A17;opacity:.65}
+.checks{display:flex;gap:16px;justify-content:center;margin-bottom:20px}
+.check{display:flex;align-items:center;gap:6px;font-size:12px;color:#3D3A33}
+.chk{width:14px;height:14px;border:1px solid #9B7E4B;display:flex;align-items:center;justify-content:center;font-size:9px;color:#9B7E4B;flex-shrink:0}
+.btn-start{
+display:block;width:100%;max-width:280px;margin:0 auto 20px;
+padding:17px 24px;
+background:linear-gradient(135deg,#B8944A 0%,#D4AE7A 50%,#B8944A 100%);
+background-size:200% auto;
+color:#1E2A3A;
+font-family:‘Cormorant Garamond’,serif;font-size:17px;font-style:italic;font-weight:600;
+letter-spacing:1px;border:none;cursor:pointer;
+box-shadow:0 4px 18px rgba(155,126,75,.35);
+transition:background-position .4s ease,box-shadow .2s;
 }
-.brand { font-family: ‘Cormorant Garamond’, serif; font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: #9B7E4B; margin-bottom: 16px; }
-.kanji-big { font-family: ‘Zen Old Mincho’, serif; font-size: 100px; font-weight: 900; color: #1C1A17; line-height: 1; margin-bottom: 8px; }
-.tagline { font-family: ‘Cormorant Garamond’, serif; font-size: 13px; color: #9B7E4B; margin-bottom: 16px; letter-spacing: 1px; }
-.headline { font-family: ‘Cormorant Garamond’, serif; font-size: 32px; font-weight: 300; line-height: 1.2; margin-bottom: 4px; }
-.subhead { font-family: ‘Cormorant Garamond’, serif; font-size: 13px; font-style: italic; color: #7A7468; margin-bottom: 4px; }
-.framework { font-size: 11px; color: #9B7E4B; letter-spacing: 1px; margin-bottom: 20px; }
-.pillars { display: flex; border: 1px solid rgba(28,26,23,.12); max-width: 260px; margin: 0 auto 16px; }
-.pillar { flex: 1; padding: 8px 4px; text-align: center; border-right: 1px solid rgba(28,26,23,.1); }
-.pillar:last-child { border-right: none; }
-.pillar-code { font-size: 9px; letter-spacing: 2px; color: #7A7468; display: block; margin-bottom: 2px; }
-.pillar-k { font-family: ‘Zen Old Mincho’, serif; font-size: 16px; color: #1C1A17; opacity: .65; }
-.checks { display: flex; gap: 16px; justify-content: center; margin-bottom: 20px; }
-.check { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #3D3A33; }
-.chk { width: 14px; height: 14px; border: 1px solid #9B7E4B; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #9B7E4B; flex-shrink: 0; }
-.btn-start {
-display: block; width: 100%; max-width: 280px; margin: 0 auto 20px;
-padding: 16px; background: #1C1A17; color: #F5F0E8;
-font-family: ‘Cormorant Garamond’, serif; font-size: 16px; font-style: italic;
-letter-spacing: 1px; border: none; cursor: pointer;
-}
-.author { display: flex; align-items: center; gap: 12px; max-width: 280px; margin: 0 auto; padding-top: 16px; border-top: 1px solid rgba(28,26,23,.1); text-align: left; }
-.av { width: 36px; height: 36px; border-radius: 50%; background: #F0E8D4; border: 1px solid rgba(155,126,75,.3); display: flex; align-items: center; justify-content: center; font-family: ‘Zen Old Mincho’, serif; font-size: 14px; color: #9B7E4B; flex-shrink: 0; }
-.av-name { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #3D3A33; display: block; margin-bottom: 2px; }
-.av-sub { font-size: 11px; font-style: italic; color: #7A7468; font-family: ‘Cormorant Garamond’, serif; line-height: 1.4; }
+.btn-start:hover{background-position:right center;box-shadow:0 6px 24px rgba(155,126,75,.5)}
+.author{display:flex;align-items:center;gap:12px;max-width:280px;margin:0 auto;padding-top:16px;border-top:1px solid rgba(28,26,23,.1);text-align:left}
+.av{width:36px;height:36px;border-radius:50%;background:#F0E8D4;border:1px solid rgba(155,126,75,.3);display:flex;align-items:center;justify-content:center;font-family:‘Zen Old Mincho’,serif;font-size:14px;color:#9B7E4B;flex-shrink:0}
+.av-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#3D3A33;display:block;margin-bottom:2px}
+.av-sub{font-size:11px;font-style:italic;color:#7A7468;font-family:‘Cormorant Garamond’,serif;line-height:1.4}
 
 /* ── QUIZ ── */
-#p-quiz {
-background: #F5F0E8;
-flex-direction: column;
+#p-quiz{background:#F5F0E8;flex-direction:column}
+.quiz-header{padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.quiz-brand{font-family:‘Cormorant Garamond’,serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#9B7E4B}
+.quiz-counter{font-size:11px;letter-spacing:2px;color:#7A7468}
+.progress-bar{display:flex;gap:5px;padding:0 24px 14px;flex-shrink:0;max-width:520px;margin:0 auto;width:100%}
+.progress-seg{flex:1;height:3px;background:rgba(28,26,23,.1);border-radius:2px;transition:background .35s ease}
+.progress-seg.done{background:#9B7E4B}
+.progress-seg.active{background:rgba(155,126,75,.45)}
+.quiz-body{padding:28px 24px 12px;flex:1;display:flex;flex-direction:column;max-width:520px;width:100%;margin:0 auto}
+.q-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#9B7E4B;margin-bottom:14px;font-family:‘Cormorant Garamond’,serif}
+.q-text{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;line-height:1.4;color:#1C1A17;margin-bottom:24px}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice-btn{width:100%;padding:14px 16px;background:rgba(255,255,255,.7);border:1px solid rgba(28,26,23,.1);cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:12px;font-family:‘Cormorant Garamond’,serif;font-size:15px;color:#1C1A17;line-height:1.5;-webkit-appearance:none;border-radius:0;transition:border-color .15s,background .15s}
+.choice-btn.selected{border-color:#9B7E4B;background:#F0E8D4}
+.choice-letter{font-size:12px;font-style:italic;color:#9B7E4B;flex-shrink:0;padding-top:1px}
+.quiz-footer{display:flex;padding:14px 24px 24px;max-width:520px;width:100%;margin:0 auto;flex-shrink:0}
+.btn-back{
+display:flex;align-items:center;gap:6px;padding:10px 0;
+background:transparent;border:none;
+font-family:‘Cormorant Garamond’,serif;font-size:14px;font-style:italic;
+color:rgba(155,126,75,.6);cursor:pointer;visibility:hidden;
+letter-spacing:.5px;transition:color .15s;
 }
-.quiz-header {
-padding: 16px 24px;
-display: flex; align-items: center; justify-content: space-between;
-border-bottom: 1px solid rgba(28,26,23,.07);
-flex-shrink: 0;
-}
-.quiz-brand { font-family: ‘Cormorant Garamond’, serif; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #9B7E4B; }
-.quiz-counter { font-size: 11px; letter-spacing: 2px; color: #7A7468; }
-.progress-bar { height: 3px; background: rgba(28,26,23,.1); flex-shrink: 0; }
-.progress-fill { height: 100%; background: #9B7E4B; transition: width .4s ease; width: 0%; }
-.quiz-body { padding: 28px 24px 20px; flex: 1; display: flex; flex-direction: column; max-width: 520px; width: 100%; margin: 0 auto; }
-.q-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #9B7E4B; margin-bottom: 14px; font-family: ‘Cormorant Garamond’, serif; }
-.q-text { font-family: ‘Cormorant Garamond’, serif; font-size: 24px; font-weight: 300; line-height: 1.4; color: #1C1A17; margin-bottom: 24px; }
-.choices { display: flex; flex-direction: column; gap: 8px; }
-.choice-btn {
-width: 100%; padding: 14px 16px;
-background: rgba(255,255,255,.7); border: 1px solid rgba(28,26,23,.1);
-cursor: pointer; text-align: left; display: flex; align-items: flex-start; gap: 12px;
-font-family: ‘Cormorant Garamond’, serif; font-size: 15px; color: #1C1A17; line-height: 1.5;
--webkit-appearance: none; border-radius: 0;
-}
-.choice-btn.selected { border-color: #9B7E4B; background: #F0E8D4; }
-.choice-letter { font-size: 12px; font-style: italic; color: #9B7E4B; flex-shrink: 0; padding-top: 1px; }
-.quiz-nav {
-padding: 12px 24px 24px;
-display: flex; gap: 10px;
-background: #F5F0E8; border-top: 1px solid rgba(28,26,23,.07);
-flex-shrink: 0; max-width: 520px; width: 100%; margin: 0 auto;
-}
-.btn-back {
-padding: 13px 16px; background: transparent; border: 1px solid rgba(28,26,23,.15);
-font-family: ‘Cormorant Garamond’, serif; font-size: 14px; color: #7A7468;
-cursor: pointer; flex-shrink: 0;
-}
-.btn-next {
-flex: 1; padding: 13px; background: #1C1A17; border: none;
-color: #F5F0E8; font-family: ‘Cormorant Garamond’, serif;
-font-size: 16px; font-style: italic; letter-spacing: 1px;
-cursor: pointer; display: none;
-}
+.btn-back:hover{color:#9B7E4B}
 
 /* ── LOADING ── */
-#p-loading {
-background: #F5F0E8;
-align-items: center; justify-content: center; text-align: center;
+#p-loading{background:#F5F0E8;align-items:center;justify-content:center;text-align:center}
+.load-kanji{font-family:‘Zen Old Mincho’,serif;font-size:140px;font-weight:900;color:#1C1A17;line-height:1;margin-bottom:20px;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.15}50%{opacity:.8}}
+.load-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:15px;color:#7A7468;letter-spacing:2px}
+
+/* ══════════════════════════════
+SCORE PAGE — tight, emotional
+══════════════════════════════ */
+#p-score{background:#F5F0E8}
+.sw{max-width:480px;margin:0 auto;width:100%}
+
+/* Hero: type reveal */
+.sh{background:#1E2A3A;padding:32px 24px 24px;text-align:center;position:relative;overflow:hidden}
+.sh::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(155,126,75,.14),transparent 55%)}
+.sh-eye{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(201,169,110,.55);margin-bottom:14px;font-family:‘Cormorant Garamond’,serif;display:block}
+.sh-kanji{font-family:‘Zen Old Mincho’,serif;font-size:86px;font-weight:900;background:linear-gradient(135deg,#C9A96E,#E8C46A,#C9A96E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
+.sh-type{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;color:#F5F0E8;margin-bottom:6px}
+.sh-type em{color:#D4AE7A}
+.sh-tagline{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:13px;color:rgba(245,240,232,.4);line-height:1.7;max-width:260px;margin:0 auto}
+
+/* “This is your body right now” */
+.sb-now{padding:18px 24px;background:#F0E8D4;border-bottom:2px solid rgba(155,126,75,.2)}
+.sb-now-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9B7E4B;font-family:‘Cormorant Garamond’,serif;margin-bottom:8px;display:block}
+.sb-now-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:15px;color:#3D3A33;line-height:1.9;border-left:2px solid #9B7E4B;padding-left:14px}
+
+/* Balance map — compact */
+.sb-map{padding:16px 24px;border-bottom:1px solid rgba(28,26,23,.08)}
+.sb-map-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#7A7468;margin-bottom:10px;display:flex;align-items:center;gap:8px;font-family:‘Cormorant Garamond’,serif}
+.sb-map-label::after{content:’’;flex:1;height:1px;background:linear-gradient(90deg,rgba(28,26,23,.1),transparent)}
+.pc{padding:10px 12px;margin-bottom:6px;border:1px solid rgba(28,26,23,.08);background:rgba(255,255,255,.6);display:flex;align-items:center;gap:10px}
+.pc.pri{background:#fff;border-color:rgba(28,26,23,.16);box-shadow:0 1px 8px rgba(28,26,23,.06)}
+.pc-k{font-family:‘Zen Old Mincho’,serif;font-size:20px;font-weight:700;line-height:1;flex-shrink:0}
+.pc-info{flex:1}
+.pc-name{font-family:‘Cormorant Garamond’,serif;font-size:14px;color:#1C1A17}
+.pc-bar{height:2px;background:rgba(28,26,23,.07);margin-top:5px}
+.pc-fill{height:100%;width:0%;transition:width 1s ease}
+.pc-badge{font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;font-family:‘Cormorant Garamond’,serif;flex-shrink:0}
+.bp{background:#1E2A3A;color:#D4AE7A}
+.bs{background:rgba(142,53,32,.1);color:#8E3520}
+.br{background:rgba(142,85,32,.1);color:#8E5520}
+.bf{background:rgba(58,48,85,.1);color:#3A3055}
+.bst{background:rgba(28,26,23,.05);color:#7A7468}
+
+/* ── THE KEY SECTION: Japanese wisdom line + Step 1 ── */
+.sb-ritual{background:#1E2A3A;padding:22px 24px;position:relative;overflow:hidden}
+.sb-ritual::before{content:’’;position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:‘Zen Old Mincho’,serif;font-size:100px;font-weight:900;color:rgba(201,169,110,.06);line-height:1;pointer-events:none;white-space:nowrap}
+/* wisdom line */
+.sb-wisdom-jp{font-family:‘Zen Old Mincho’,serif;font-size:14px;color:rgba(201,169,110,.7);letter-spacing:2px;display:block;margin-bottom:4px}
+.sb-wisdom-en{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:16px;color:rgba(245,240,232,.6);line-height:1.5;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid rgba(201,169,110,.12)}
+/* ritual preview */
+.sb-ritual-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.5);font-family:‘Cormorant Garamond’,serif;margin-bottom:8px;display:block}
+.sb-ritual-name{font-family:‘Zen Old Mincho’,serif;font-size:20px;color:#C9A96E;letter-spacing:2px;display:block;margin-bottom:2px}
+.sb-ritual-romaji{font-family:‘Cormorant Garamond’,serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,169,110,.35);margin-bottom:14px;display:block}
+/* Step 1 — fully visible, creates desire */
+.sb-step1{background:rgba(255,255,255,.05);border-left:2px solid rgba(201,169,110,.5);padding:12px 14px;margin-bottom:14px}
+.sb-step1-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,169,110,.55);font-family:‘Cormorant Garamond’,serif;margin-bottom:6px;display:block}
+.sb-step1-text{font-family:‘Cormorant Garamond’,serif;font-size:15px;color:#F5F0E8;line-height:1.55}
+/* Steps 2+3 locked */
+.sb-locked{border:1px dashed rgba(201,169,110,.2);padding:12px 14px;text-align:center}
+.sb-locked-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:13px;color:rgba(201,169,110,.4);letter-spacing:.5px}
+.sb-locked-text span{opacity:.6;margin-right:6px}
+
+/* ── EMAIL GATE ── */
+.sb-email{padding:0 24px 32px;background:#F5F0E8}
+
+/* Top bridge */
+.sb-email-bridge{padding:20px 0 16px;text-align:center}
+.seb-title{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:400;color:#1C1A17;margin-bottom:5px;line-height:1.3}
+.seb-sub{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:13px;color:#7A7468;line-height:1.7}
+
+/* Email card */
+.email-card{background:#fff;border:1px solid rgba(28,26,23,.12);border-top:3px solid #9B7E4B;overflow:hidden}
+.ec-top{background:#1E2A3A;padding:14px 18px;display:flex;align-items:center;gap:10px}
+.ec-top-kanji{font-family:‘Zen Old Mincho’,serif;font-size:28px;font-weight:900;color:#C9A96E;line-height:1;flex-shrink:0}
+.ec-top-text{}
+.ec-top-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,169,110,.55);font-family:‘Cormorant Garamond’,serif;display:block;margin-bottom:2px}
+.ec-top-title{font-family:‘Cormorant Garamond’,serif;font-size:15px;color:#F5F0E8;line-height:1.3}
+.ec-body{padding:18px}
+.ec-what{margin-bottom:16px}
+.ec-what-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-family:‘Cormorant Garamond’,serif;font-size:13px;color:#3D3A33;line-height:1.5}
+.ec-dot{width:4px;height:4px;border-radius:50%;background:#9B7E4B;flex-shrink:0;margin-top:5px}
+.ec-input{width:100%;padding:16px 16px;border:2px solid #9B7E4B;background:#FFFDF8;font-family:‘Cormorant Garamond’,serif;font-size:17px;color:#1C1A17;outline:none;margin-bottom:10px;-webkit-appearance:none;border-radius:0;transition:border-color .2s,box-shadow .2s}
+.ec-input:focus{border-color:#C9A96E;background:#fff;box-shadow:0 0 0 3px rgba(155,126,75,.15)}
+.ec-btn{
+width:100%;padding:17px;
+background:linear-gradient(135deg,#B8944A 0%,#D4AE7A 50%,#B8944A 100%);
+background-size:200% auto;
+border:none;color:#1E2A3A;
+font-family:‘Cormorant Garamond’,serif;font-size:17px;font-style:italic;font-weight:600;
+letter-spacing:1px;cursor:pointer;margin-bottom:8px;
+display:flex;align-items:center;justify-content:center;gap:8px;
+box-shadow:0 4px 16px rgba(155,126,75,.4);
+transition:background-position .4s ease,box-shadow .2s;
 }
-.load-kanji {
-font-family: ‘Zen Old Mincho’, serif; font-size: 140px; font-weight: 900;
-color: #1C1A17; line-height: 1; margin-bottom: 20px;
-animation: pulse 1.4s ease-in-out infinite;
+.ec-btn:hover{background-position:right center;box-shadow:0 6px 22px rgba(155,126,75,.55)}
+.ec-note{text-align:center;font-size:11px;color:#9A9488;font-style:italic;font-family:‘Cormorant Garamond’,serif}
+
+/* ══════════════════════════════
+RESET PAGE — full experience
+══════════════════════════════ */
+#p-reset{background:#F5F0E8}
+.rw{max-width:480px;margin:0 auto;width:100%}
+
+/* Unlocked confirmation */
+.r-unlocked{background:linear-gradient(90deg,#B8944A,#D4AE7A,#B8944A);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:8px}
+.r-unlocked p{font-family:‘Cormorant Garamond’,serif;font-size:12px;color:#F5F0E8;letter-spacing:1px}
+
+/* Hero */
+.r-hero{background:#1E2A3A;padding:26px 24px 22px;position:relative;overflow:hidden}
+.r-hero::after{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(155,126,75,.08),transparent 60%)}
+.r-bg-k{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:‘Zen Old Mincho’,serif;font-size:88px;font-weight:900;color:rgba(201,169,110,.07);line-height:1;pointer-events:none}
+.r-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.5);font-family:‘Cormorant Garamond’,serif;margin-bottom:10px;display:block}
+.r-jp{font-family:‘Zen Old Mincho’,serif;font-size:26px;color:#C9A96E;letter-spacing:3px;display:block;margin-bottom:2px}
+.r-romaji{font-family:‘Cormorant Garamond’,serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,169,110,.35);margin-bottom:12px;display:block}
+.r-headline{font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:300;color:#F5F0E8;line-height:1.45;max-width:280px}
+
+/* Catchphrase */
+.r-catch{padding:14px 20px;background:#F0E8D4;border-left:3px solid #9B7E4B}
+.r-catch-jp{font-family:‘Zen Old Mincho’,serif;font-size:13px;color:#9B7E4B;letter-spacing:1px;display:block;margin-bottom:4px}
+.r-catch-en{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;color:#1C1A17;line-height:1.5}
+
+/* Culture */
+.r-culture{padding:16px 24px;border-bottom:1px solid rgba(28,26,23,.07)}
+.r-culture-head{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#7A7468;font-family:‘Cormorant Garamond’,serif;margin-bottom:8px;display:block}
+.r-culture-body{font-family:‘Cormorant Garamond’,serif;font-size:14px;color:#3D3A33;line-height:1.85}
+.r-culture-body strong{color:#1C1A17}
+.r-culture-pull{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:14px;color:#9B7E4B;border-left:2px solid #9B7E4B;padding-left:12px;margin-top:12px;line-height:1.6}
+
+/* Steps */
+.r-steps{padding:16px 24px;border-bottom:1px solid rgba(28,26,23,.07)}
+.r-steps-head{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#7A7468;font-family:‘Cormorant Garamond’,serif;margin-bottom:14px;display:block}
+.r-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.r-step:last-child{margin-bottom:0}
+.r-step-n{width:26px;height:26px;border-radius:50%;background:#1E2A3A;color:#C9A96E;font-family:‘Cormorant Garamond’,serif;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.r-step-action{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:600;color:#1C1A17;display:block;margin-bottom:2px}
+.r-step-note{font-size:12px;color:#7A7468;line-height:1.6;font-style:italic;font-family:‘Cormorant Garamond’,serif}
+
+/* Signal */
+.r-signal{padding:14px 24px;background:rgba(28,26,23,.03);border-bottom:1px solid rgba(28,26,23,.07)}
+.r-signal-inner{border-left:2px solid #9B7E4B;padding-left:14px}
+.r-signal-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:14px;color:#3D3A33;line-height:1.85}
+
+/* Day 1 → $47 bridge */
+.r-day1{background:#1E2A3A;padding:22px 24px}
+.r-d1-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.45);font-family:‘Cormorant Garamond’,serif;margin-bottom:8px;display:block}
+.r-d1-title{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:300;color:#F5F0E8;line-height:1.5;margin-bottom:6px}
+.r-d1-body{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:13px;color:rgba(245,240,232,.38);line-height:1.75;margin-bottom:14px}
+.r-d1-divider{height:1px;background:rgba(201,169,110,.12);margin-bottom:12px}
+.r-d1-cta-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;font-family:‘Cormorant Garamond’,serif;margin-bottom:3px;display:block}
+.r-d1-cta-text{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7}
+
+/* CTA to LP */
+.r-cta{padding:20px 24px 36px}
+.r-cta-sub{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:13px;color:#7A7468;margin-bottom:14px;line-height:1.7;text-align:center}
+.r-cta-btn{
+display:block;width:100%;padding:17px;
+background:linear-gradient(135deg,#B8944A 0%,#D4AE7A 50%,#B8944A 100%);
+background-size:200% auto;
+border:none;color:#1E2A3A;
+font-family:‘Cormorant Garamond’,serif;font-size:17px;font-style:italic;font-weight:600;
+letter-spacing:1px;cursor:pointer;margin-bottom:8px;text-align:center;
+box-shadow:0 4px 16px rgba(155,126,75,.35);
+transition:background-position .4s ease,box-shadow .2s;
 }
-@keyframes pulse { 0%,100%{opacity:.15;} 50%{opacity:.8;} }
-.load-text { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 15px; color: #7A7468; letter-spacing: 2px; }
+.r-cta-btn:hover{background-position:right center;box-shadow:0 6px 22px rgba(155,126,75,.5)}
+.r-cta-note{text-align:center;font-size:11px;color:#9A9488;font-family:‘Cormorant Garamond’,serif;font-style:italic}
 
-/* ── SCORE ── */
-#p-score { background: #F5F0E8; }
-.score-wrap { max-width: 520px; margin: 0 auto; width: 100%; }
-.score-hero { background: #1C1A17; padding: 36px 24px; text-align: center; position: relative; overflow: hidden; }
-.score-hero::before { content: ‘’; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(155,126,75,.12), transparent 60%); }
-.score-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(201,169,110,.7); margin-bottom: 14px; font-family: ‘Cormorant Garamond’, serif; }
-.score-kanji { font-family: ‘Zen Old Mincho’, serif; font-size: 90px; font-weight: 900; background: linear-gradient(135deg, #C9A96E, #E8C46A, #C9A96E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 10px; }
-.score-type { font-family: ‘Cormorant Garamond’, serif; font-size: 22px; font-weight: 300; color: #F5F0E8; margin-bottom: 8px; }
-.score-type em { color: #D4AE7A; }
-.score-tagline { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 14px; color: rgba(245,240,232,.42); max-width: 260px; margin: 0 auto; line-height: 1.7; }
+/* ══════════════════════════════
+LP PAGE — $47 offer
+══════════════════════════════ */
+#p-lp{background:#1E2A3A;min-height:100vh}
+.lp-hero{min-height:100vh;background:#1E2A3A;display:flex;align-items:center;padding:72px 28px;position:relative;overflow:hidden}
+.lp-hero-bg{position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:‘Cormorant Garamond’,serif;font-size:340px;color:rgba(201,169,110,.05);line-height:1;pointer-events:none}
+.lp-hero-content{max-width:580px}
+.lp-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;margin-bottom:28px;font-family:‘DM Sans’,sans-serif}
+.lp-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(38px,7vw,68px);font-weight:300;line-height:1.05}
+.lp-h1 .gold{color:#C9A96E;font-style:italic}
+.lp-h1 .dim{color:rgba(255,255,255,.3)}
+.lp-h1 .rhythm{color:rgba(201,169,110,.55);font-style:italic}
+.lp-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.65;margin-top:22px}
+.lp-div{width:44px;height:1px;background:#C9A96E;margin:28px 0}
+.lp-note{font-size:13px;color:rgba(255,255,255,.35);line-height:1.8}
+.lp-note strong{color:#C9A96E;font-weight:500}
 
-.score-section { padding: 20px 24px; border-bottom: 1px solid rgba(28,26,23,.08); }
-.section-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #7A7468; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-family: ‘Cormorant Garamond’, serif; }
-.section-label::after { content: ‘’; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(28,26,23,.1), transparent); }
+.lp-truths{background:#1E2A3A}
+.lp-truth{padding:18px 28px;border-top:1px solid rgba(255,255,255,.05);font-family:‘Cormorant Garamond’,serif;font-size:20px;font-weight:300;color:rgba(255,255,255,.38);max-width:580px;margin:0 auto}
+.lp-truth:last-child{color:#C9A96E;font-style:italic;border-bottom:1px solid rgba(255,255,255,.05)}
 
-.pillar-card { padding: 14px 16px; margin-bottom: 8px; border: 1px solid rgba(28,26,23,.09); background: rgba(255,255,255,.65); }
-.pillar-card.primary { background: rgba(255,255,255,.9); border-color: rgba(28,26,23,.18); box-shadow: 0 2px 12px rgba(28,26,23,.06); }
-.pillar-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.pillar-card-left { display: flex; align-items: center; gap: 10px; }
-.pillar-kanji { font-family: ‘Zen Old Mincho’, serif; font-size: 24px; font-weight: 700; line-height: 1; }
-.pillar-code { font-size: 9px; letter-spacing: 2px; color: #7A7468; display: block; font-family: ‘Cormorant Garamond’, serif; }
-.pillar-name { font-family: ‘Cormorant Garamond’, serif; font-size: 15px; color: #1C1A17; }
-.pillar-badge { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; font-family: ‘Cormorant Garamond’, serif; }
-.badge-primary { background: #1C1A17; color: #D4AE7A; }
-.badge-secondary { background: rgba(142,53,32,.1); color: #8E3520; }
-.badge-recoverable { background: rgba(142,85,32,.1); color: #8E5520; }
-.badge-fragile { background: rgba(58,48,85,.1); color: #3A3055; }
-.badge-stable { background: rgba(28,26,23,.05); color: #7A7468; }
-.bar-track { height: 2px; background: rgba(28,26,23,.07); margin-bottom: 7px; }
-.bar-fill { height: 100%; width: 0%; transition: width 1s ease; }
-.pillar-foot { display: flex; justify-content: space-between; }
-.pillar-desc { font-size: 11px; font-style: italic; color: #7A7468; font-family: ‘Cormorant Garamond’, serif; }
-.pillar-pct { font-family: ‘Cormorant Garamond’, serif; font-size: 14px; color: #9A9488; }
+.lp-signal-bar{background:#C9A96E;color:#1E2A3A;padding:24px 28px;text-align:center}
+.lp-signal-bar p{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:400;line-height:1.4;max-width:480px;margin:0 auto}
 
-.score-summary-box { border-left: 2px solid #9B7E4B; padding: 14px 16px; background: rgba(255,255,255,.55); }
-.score-summary-text { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 15px; color: #3D3A33; line-height: 1.8; }
+.lp-section{padding:52px 28px}
+.lp-si{max-width:580px;margin:0 auto}
+.lp-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;margin-bottom:16px;display:block}
+.lp-h2{font-family:‘Cormorant Garamond’,serif;font-size:34px;font-weight:300;line-height:1.2;margin-bottom:16px}
+.lp-body{font-size:14px;line-height:1.8;opacity:.7;margin-bottom:12px}
+.lp-pull{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-style:italic;color:#C9A96E;border-left:2px solid #C9A96E;padding-left:14px;margin:20px 0;line-height:1.5}
+.lp-gold-box{border-top:2px solid #C9A96E;background:#F5F0E8;color:#1E2A3A;padding:18px 20px;margin:18px 0}
+.lp-gold-box p{font-size:14px;line-height:1.75}
+.lp-gold-box .pull{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;color:#9B7E4B;display:block;margin-top:8px;line-height:1.45}
 
-.social-proof-box { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-.social-proof-text { font-family: ‘Cormorant Garamond’, serif; font-size: 15px; color: #1C1A17; line-height: 1.7; }
-.social-proof-text strong { display: block; font-weight: 500; }
-.social-proof-text span { font-style: italic; font-size: 13px; color: #7A7468; }
-.social-proof-badge { flex-shrink: 0; background: #1C1A17; padding: 10px 14px; text-align: center; }
-.social-proof-num { font-family: ‘Cormorant Garamond’, serif; font-size: 28px; font-weight: 300; color: #C9A96E; display: block; line-height: 1; }
-.social-proof-unit { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,.4); }
+/* Comparison */
+.two-q{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:20px 0}
+.q-card{padding:20px 16px;font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;line-height:1.5;text-align:center}
+.q-west{background:rgba(0,0,0,.05);color:#8A9BB0}
+.q-east{background:#1E2A3A;color:#C9A96E}
+.why-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:20px 0}
+.why-col{padding:20px 18px}
+.why-west{background:rgba(0,0,0,.05)}
+.why-east{background:#1E2A3A}
+.why-col-head{font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:block;font-family:‘Cormorant Garamond’,serif}
+.why-west .why-col-head{color:#8A9BB0}
+.why-east .why-col-head{color:#C9A96E}
+.why-item{font-size:13px;line-height:2}
+.why-west .why-item{color:#8A9BB0}
+.why-east .why-item{color:rgba(255,255,255,.8);font-weight:500}
+.why-foot{font-size:12px;font-style:italic;margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
+.why-west .why-foot{color:#8A9BB0}
+.why-east .why-foot{color:#C9A96E;border-color:rgba(255,255,255,.07)}
 
-.practice-box { background: #1C1A17; padding: 20px; margin-bottom: 14px; }
-.practice-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #C9A96E; margin-bottom: 8px; font-family: ‘Cormorant Garamond’, serif; }
-.practice-title { font-family: ‘Cormorant Garamond’, serif; font-size: 18px; font-weight: 300; color: #F5F0E8; margin-bottom: 14px; line-height: 1.4; }
-.practice-step { display: flex; gap: 10px; margin-bottom: 8px; }
-.step-num { font-family: ‘Cormorant Garamond’, serif; font-size: 12px; font-style: italic; color: #C9A96E; flex-shrink: 0; padding-top: 1px; }
-.step-text { font-size: 13px; color: rgba(245,240,232,.75); line-height: 1.6; font-family: ‘Cormorant Garamond’, serif; }
+/* Testimonials */
+.tcards{display:flex;flex-direction:column;gap:2px}
+.tcard{padding:24px 20px;border-top:2px solid #C9A96E}
+.tcard:nth-child(odd){background:#1E2A3A}
+.tcard:nth-child(even){background:#EDE9E2}
+.tcard q{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;line-height:1.6;display:block;margin-bottom:12px}
+.tcard:nth-child(odd) q{color:rgba(255,255,255,.84)}
+.tcard:nth-child(even) q{color:#1E2A3A}
+.tcard cite{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;font-style:normal}
 
-.cta-instruction { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 14px; color: #7A7468; margin-bottom: 10px; line-height: 1.6; }
-.micro-q { font-family: ‘Cormorant Garamond’, serif; font-size: 13px; color: #7A7468; margin-bottom: 10px; }
-.btn-practice-done {
-width: 100%; padding: 15px; background: #1C1A17; border: none;
-color: #F5F0E8; font-family: ‘Cormorant Garamond’, serif;
-font-size: 16px; font-style: italic; letter-spacing: 1px; cursor: pointer;
+/* Safe box */
+.safe-box{border:1px solid rgba(201,169,110,.3);background:rgba(201,169,110,.05);padding:28px;text-align:center;margin:28px 0}
+.safe-box p{font-family:‘Cormorant Garamond’,serif;font-size:26px;font-style:italic;color:#C9A96E;line-height:1.4}
+
+/* Offer */
+.offer-grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media(min-width:800px){.offer-grid{grid-template-columns:1fr 340px;align-items:start}}
+.offer-h2{font-family:‘Cormorant Garamond’,serif;font-size:34px;font-weight:300;color:#fff;line-height:1.2;margin-bottom:18px}
+.day-list{margin-bottom:22px}
+.day-row{display:grid;grid-template-columns:48px 1fr;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px}
+.day-n{color:#C9A96E;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding-top:1px}
+.day-name{color:#fff;font-weight:500}
+.price-note{font-size:13px;color:#8A9BB0;line-height:1.8;margin-bottom:5px}
+.price-main{font-family:‘Cormorant Garamond’,serif;font-size:22px;color:#fff;margin-bottom:20px}
+.price-main em{color:#C9A96E;font-style:italic}
+.inc-box{background:rgba(255,255,255,.03);border:1px solid rgba(201,169,110,.14);padding:18px 20px;margin-bottom:20px}
+.inc-head{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;display:block;margin-bottom:8px}
+.inc-item{font-size:13px;color:rgba(255,255,255,.5);line-height:2;padding-left:12px;position:relative}
+.inc-item::before{content:’-’;position:absolute;left:0;color:#C9A96E}
+.bridge-box{border:1px solid rgba(201,169,110,.14);padding:20px}
+.bridge-box p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:5px}
+.bridge-aft{color:#C9A96E;font-weight:500}
+.offer-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,169,110,.22);padding:28px 24px}
+.offer-price{text-align:center;padding:16px 0 24px;border-bottom:1px solid rgba(201,169,110,.14);margin-bottom:20px}
+.offer-price-num{font-family:‘Cormorant Garamond’,serif;font-size:68px;font-weight:300;color:#C9A96E;line-height:1;display:block}
+.offer-price-lbl{font-size:10px;letter-spacing:2px;color:#8A9BB0;display:block;margin-top:3px}
+.btn-cta{
+display:block;width:100%;padding:18px 20px;
+background:linear-gradient(135deg,#B8944A 0%,#D4AE7A 50%,#B8944A 100%);
+background-size:200% auto;
+border:none;color:#1E2A3A;
+font-family:‘DM Sans’,sans-serif;font-size:13px;font-weight:700;
+letter-spacing:2px;text-transform:uppercase;
+text-align:center;text-decoration:none;cursor:pointer;margin-bottom:8px;
+box-shadow:0 4px 20px rgba(155,126,75,.4);
+transition:background-position .4s ease,box-shadow .2s;
 }
+.btn-cta:hover{background-position:right center;box-shadow:0 6px 28px rgba(155,126,75,.55)}
+.offer-note{font-size:10px;color:#8A9BB0;text-align:center;line-height:1.6}
+.offer-guar{font-size:12px;color:rgba(255,255,255,.28);line-height:1.8;border-top:1px solid rgba(255,255,255,.06);padding-top:14px;margin-top:12px;text-align:center}
 
-/* ── EMAIL SECTION ── */
-.email-section { padding: 22px 24px 40px; }
-.after-practice { display: none; margin-bottom: 20px; }
-.after-text { border-left: 2px solid #9B7E4B; padding: 14px 16px; background: #F0E8D4; margin-bottom: 14px; }
-.after-text p { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 15px; color: #3D3A33; line-height: 1.8; }
-.after-path { font-family: ‘Cormorant Garamond’, serif; font-size: 14px; color: #3D3A33; line-height: 1.7; }
-.unlock-intro { text-align: center; margin-bottom: 18px; }
-.unlock-intro p { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 15px; color: #7A7468; line-height: 1.7; }
-.result-badge { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(255,255,255,.65); border: 1px solid rgba(28,26,23,.1); margin-bottom: 16px; }
-.result-badge-k { font-family: ‘Zen Old Mincho’, serif; font-size: 28px; font-weight: 900; color: #C9A96E; line-height: 1; }
-.result-badge-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #7A7468; display: block; margin-bottom: 2px; font-family: ‘Cormorant Garamond’, serif; }
-.result-badge-type { font-family: ‘Cormorant Garamond’, serif; font-size: 15px; color: #1C1A17; }
+/* Vision */
+.vision-box{background:#E8EDF5;padding:40px 26px}
+.vline{font-family:‘Cormorant Garamond’,serif;font-size:20px;color:#1E2A3A;line-height:1.55;padding:5px 0 5px 14px;border-left:2px solid transparent;transition:border-color .4s,padding-left .3s;font-weight:300}
+.vline.lit{border-left-color:#C9A96E;padding-left:20px}
+.vclose{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-style:italic;color:#C9A96E;font-weight:600;display:block;margin-top:5px;padding-left:20px;opacity:0;transition:opacity .5s 1.1s}
+.vclose.lit{opacity:1}
+.vision-cta{font-size:14px;color:rgba(30,42,58,.5);font-style:italic;margin-top:20px;padding-top:16px;border-top:1px solid rgba(30,42,58,.1)}
 
-.email-box { background: rgba(255,255,255,.85); border: 1px solid rgba(28,26,23,.12); padding: 22px 20px; }
-.email-gold-line { height: 1px; background: linear-gradient(90deg, #9B7E4B, rgba(155,126,75,.1)); margin-bottom: 16px; }
-.email-title { font-family: ‘Cormorant Garamond’, serif; font-size: 18px; color: #1C1A17; margin-bottom: 4px; }
-.email-sub { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 12px; color: #7A7468; margin-bottom: 16px; line-height: 1.6; }
-.email-items { margin-bottom: 18px; }
-.email-item { display: flex; align-items: flex-start; gap: 8px; font-family: ‘Cormorant Garamond’, serif; font-size: 13px; color: #3D3A33; line-height: 1.5; margin-bottom: 7px; }
-.email-dot { width: 5px; height: 5px; border-radius: 50%; background: #9B7E4B; flex-shrink: 0; margin-top: 5px; }
-.email-input {
-width: 100%; padding: 14px 16px; border: 1px solid rgba(28,26,23,.18);
-background: rgba(255,255,255,.95); font-family: ‘Cormorant Garamond’, serif;
-font-size: 16px; color: #1C1A17; outline: none; margin-bottom: 10px;
--webkit-appearance: none; border-radius: 0;
+.lp-footer{background:#1E2A3A;padding:36px 28px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.lp-footer-logo{font-family:‘Cormorant Garamond’,serif;font-size:22px;color:#C9A96E;display:block;margin-bottom:8px}
+.lp-footer p{font-size:11px;color:#8A9BB0;line-height:1.9}
+
+/* Sticky */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:#1E2A3A;border-top:1px solid rgba(201,169,110,.3);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:999;transform:translateY(100%);transition:transform .35s ease}
+.sticky-bar.show{transform:translateY(0)}
+.sticky-txt{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.sticky-txt strong{color:#C9A96E;display:block;font-size:13px}
+.sticky-btn{
+background:linear-gradient(135deg,#B8944A,#D4AE7A,#B8944A);
+background-size:200% auto;
+color:#1E2A3A;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+padding:11px 16px;text-decoration:none;white-space:nowrap;flex-shrink:0;
+box-shadow:0 2px 10px rgba(155,126,75,.35);
+transition:background-position .3s ease;
 }
-.email-input:focus { border-color: #9B7E4B; }
-.btn-unlock {
-width: 100%; padding: 16px; background: #1C1A17; border: none;
-color: #F5F0E8; font-family: ‘Cormorant Garamond’, serif;
-font-size: 16px; font-style: italic; letter-spacing: 1px; cursor: pointer;
-margin-bottom: 10px;
-}
-.email-note { text-align: center; font-size: 11px; color: #9A9488; font-style: italic; font-family: ‘Cormorant Garamond’, serif; }
+.sticky-btn:hover{background-position:right center}
+@media(min-width:800px){.sticky-bar{display:none}}
 
-/* ── LP ── */
-#p-lp { background: #1E2A3A; min-height: 100vh; }
-.lp-hero { min-height: 100vh; background: #1E2A3A; display: flex; align-items: center; padding: 72px 28px; position: relative; overflow: hidden; }
-.lp-hero-bg { position: absolute; right: -2%; top: 50%; transform: translateY(-50%); font-family: ‘Cormorant Garamond’, serif; font-size: 340px; color: rgba(201,169,110,.05); line-height: 1; pointer-events: none; }
-.lp-hero-content { max-width: 600px; }
-.lp-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C9A96E; margin-bottom: 28px; font-family: ‘DM Sans’, sans-serif; }
-.lp-h1 { font-family: ‘Cormorant Garamond’, serif; font-size: clamp(40px, 8vw, 72px); font-weight: 300; line-height: 1.05; }
-.lp-h1 .gold { color: #C9A96E; font-style: italic; }
-.lp-h1 .dim { color: rgba(255,255,255,.35); }
-.lp-sub { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.6; margin-top: 24px; }
-.lp-div { width: 44px; height: 1px; background: #C9A96E; margin: 32px 0; }
-.lp-note { font-size: 14px; color: rgba(255,255,255,.38); line-height: 1.8; }
-.lp-note strong { color: #C9A96E; font-weight: 500; }
-
-.lp-truths { background: #1E2A3A; }
-.lp-truth { padding: 20px 28px; border-top: 1px solid rgba(255,255,255,.05); font-family: ‘Cormorant Garamond’, serif; font-size: 22px; font-weight: 300; color: rgba(255,255,255,.4); max-width: 600px; margin: 0 auto; }
-.lp-truth:last-child { color: #C9A96E; font-style: italic; border-bottom: 1px solid rgba(255,255,255,.05); }
-.lp-signal { background: #C9A96E; color: #1E2A3A; padding: 28px; text-align: center; }
-.lp-signal p { font-family: ‘Cormorant Garamond’, serif; font-size: 24px; font-weight: 400; line-height: 1.4; max-width: 500px; margin: 0 auto; }
-
-.lp-section { padding: 60px 28px; }
-.lp-section-light { background: #F5F0E8; color: #1E2A3A; }
-.lp-section-warm { background: #EDE9E2; color: #1E2A3A; }
-.lp-section-dark { background: #1E2A3A; color: #fff; }
-.lp-section-blue { background: #E8EDF5; color: #1E2A3A; }
-.lp-section-inner { max-width: 600px; margin: 0 auto; }
-.lp-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #C9A96E; margin-bottom: 18px; display: block; }
-.lp-h2 { font-family: ‘Cormorant Garamond’, serif; font-size: 36px; font-weight: 300; line-height: 1.2; margin-bottom: 18px; }
-.lp-body { font-size: 14px; line-height: 1.8; opacity: .72; margin-bottom: 14px; }
-.lp-pull { font-family: ‘Cormorant Garamond’, serif; font-size: 19px; font-style: italic; color: #C9A96E; border-left: 2px solid #C9A96E; padding-left: 16px; margin: 22px 0; line-height: 1.5; }
-.lp-gold-box { border-top: 2px solid #C9A96E; background: #F5F0E8; color: #1E2A3A; padding: 20px 22px; margin: 20px 0; }
-.lp-gold-box p { font-size: 14px; line-height: 1.75; }
-.lp-gold-box .pull { font-family: ‘Cormorant Garamond’, serif; font-size: 17px; font-style: italic; color: #9B7E4B; display: block; margin-top: 8px; line-height: 1.45; }
-
-.two-q { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 22px 0; }
-.q-card { padding: 22px 18px; font-family: ‘Cormorant Garamond’, serif; font-size: 17px; font-style: italic; line-height: 1.5; text-align: center; }
-.q-west { background: rgba(0,0,0,.05); color: #8A9BB0; }
-.q-east { background: #1E2A3A; color: #C9A96E; }
-
-.why-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 22px 0; }
-.why-col { padding: 24px 20px; }
-.why-west { background: rgba(0,0,0,.05); }
-.why-east { background: #1E2A3A; }
-.why-col-head { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: block; font-family: ‘Cormorant Garamond’, serif; }
-.why-west .why-col-head { color: #8A9BB0; }
-.why-east .why-col-head { color: #C9A96E; }
-.why-item { font-size: 13px; line-height: 2; }
-.why-west .why-item { color: #8A9BB0; }
-.why-east .why-item { color: rgba(255,255,255,.82); font-weight: 500; }
-.why-foot { font-size: 12px; font-style: italic; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,.07); }
-.why-west .why-foot { color: #8A9BB0; }
-.why-east .why-foot { color: #C9A96E; border-color: rgba(255,255,255,.07); }
-
-.safe-box { border: 1px solid rgba(201,169,110,.3); background: rgba(201,169,110,.05); padding: 32px; text-align: center; margin: 32px 0; }
-.safe-box p { font-family: ‘Cormorant Garamond’, serif; font-size: 28px; font-style: italic; color: #C9A96E; line-height: 1.4; }
-
-.rituals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 28px 0; }
-.ritual { background: rgba(255,255,255,.03); padding: 24px 14px; text-align: center; border-top: 1px solid rgba(201,169,110,.2); }
-.ritual-k { font-family: ‘Cormorant Garamond’, serif; font-size: 30px; color: #C9A96E; display: block; margin-bottom: 6px; }
-.ritual-n { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #fff; display: block; margin-bottom: 6px; }
-.ritual-d { font-size: 11px; color: #8A9BB0; line-height: 1.6; }
-
-.lp-steps { display: flex; flex-direction: column; gap: 2px; }
-.lp-step { display: grid; grid-template-columns: 46px 1fr; }
-.lp-step-num { background: #1E2A3A; color: #fff; font-family: ‘Cormorant Garamond’, serif; font-size: 22px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
-.lp-step-body { background: #fff; padding: 18px 22px; }
-.lp-step-title { font-weight: 500; font-size: 15px; color: #1E2A3A; margin-bottom: 5px; }
-.lp-step-desc { font-size: 13px; line-height: 1.7; color: rgba(30,42,58,.6); }
-
-.tcards { display: flex; flex-direction: column; gap: 2px; }
-.tcard { padding: 26px 22px; border-top: 2px solid #C9A96E; }
-.tcard:nth-child(odd) { background: #1E2A3A; }
-.tcard:nth-child(even) { background: #EDE9E2; }
-.tcard q { font-family: ‘Cormorant Garamond’, serif; font-size: 17px; font-style: italic; line-height: 1.6; display: block; margin-bottom: 14px; }
-.tcard:nth-child(odd) q { color: rgba(255,255,255,.86); }
-.tcard:nth-child(even) q { color: #1E2A3A; }
-.tcard cite { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #C9A96E; font-style: normal; }
-
-.vision-box { background: #E8EDF5; padding: 44px 28px; }
-.vision-box .v-label { color: rgba(30,42,58,.45); }
-.vline { font-family: ‘Cormorant Garamond’, serif; font-size: 21px; color: #1E2A3A; line-height: 1.55; padding: 5px 0 5px 14px; border-left: 2px solid transparent; transition: border-color .4s, padding-left .3s; font-weight: 300; }
-.vline.lit { border-left-color: #C9A96E; padding-left: 20px; }
-.vclose { font-family: ‘Cormorant Garamond’, serif; font-size: 24px; font-style: italic; color: #C9A96E; font-weight: 600; display: block; margin-top: 6px; padding-left: 20px; opacity: 0; transition: opacity .5s 1.1s; }
-.vclose.lit { opacity: 1; }
-.vision-cta { font-size: 14px; color: rgba(30,42,58,.5); font-style: italic; margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(30,42,58,.1); }
-
-.offer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-@media(min-width:800px){ .offer-grid { grid-template-columns: 1fr 360px; align-items: start; } }
-.offer-h2 { font-family: ‘Cormorant Garamond’, serif; font-size: 36px; font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 20px; }
-.day-list { margin-bottom: 24px; }
-.day-row { display: grid; grid-template-columns: 50px 1fr; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 13px; }
-.day-n { color: #C9A96E; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
-.day-name { color: #fff; font-weight: 500; }
-.price-note { font-size: 13px; color: #8A9BB0; line-height: 1.8; margin-bottom: 6px; }
-.price-main { font-family: ‘Cormorant Garamond’, serif; font-size: 24px; color: #fff; margin-bottom: 22px; }
-.price-main em { color: #C9A96E; font-style: italic; }
-.includes-box { background: rgba(255,255,255,.04); border: 1px solid rgba(201,169,110,.15); padding: 20px 22px; margin-bottom: 22px; }
-.includes-head { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #C9A96E; display: block; margin-bottom: 10px; }
-.inc-item { font-size: 13px; color: rgba(255,255,255,.55); line-height: 2; padding-left: 12px; position: relative; }
-.inc-item::before { content: ‘-’; position: absolute; left: 0; color: #C9A96E; }
-.bridge-box { border: 1px solid rgba(201,169,110,.15); padding: 22px; }
-.bridge-box p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 6px; }
-.bridge-aft { color: #C9A96E; font-weight: 500; }
-.bridge-url { font-size: 10px; color: rgba(201,169,110,.35); letter-spacing: 1px; display: block; margin-top: 6px; }
-
-.offer-card { background: rgba(255,255,255,.04); border: 1px solid rgba(201,169,110,.25); padding: 32px 26px; }
-.offer-price { text-align: center; padding: 18px 0 26px; border-bottom: 1px solid rgba(201,169,110,.15); margin-bottom: 22px; }
-.offer-price-num { font-family: ‘Cormorant Garamond’, serif; font-size: 72px; font-weight: 300; color: #C9A96E; line-height: 1; display: block; }
-.offer-price-lbl { font-size: 10px; letter-spacing: 2px; color: #8A9BB0; display: block; margin-top: 4px; }
-.btn-cta {
-display: block; width: 100%; padding: 17px 22px; background: #C9A96E; border: none;
-color: #1E2A3A; font-family: ‘DM Sans’, sans-serif; font-size: 13px;
-font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
-text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
-}
-.offer-note { font-size: 10px; color: #8A9BB0; text-align: center; line-height: 1.6; }
-.offer-guar { font-size: 12px; color: rgba(255,255,255,.3); line-height: 1.8; border-top: 1px solid rgba(255,255,255,.06); padding-top: 16px; margin-top: 14px; text-align: center; }
-
-.lp-footer { background: #1E2A3A; padding: 40px 28px; text-align: center; border-top: 1px solid rgba(255,255,255,.06); }
-.lp-footer-logo { font-family: ‘Cormorant Garamond’, serif; font-size: 24px; color: #C9A96E; display: block; margin-bottom: 8px; }
-.lp-footer p { font-size: 11px; color: #8A9BB0; line-height: 1.9; }
-
-.sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1E2A3A; border-top: 1px solid rgba(201,169,110,.3); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; z-index: 999; transform: translateY(100%); transition: transform .35s ease; }
-.sticky-bar.show { transform: translateY(0); }
-.sticky-txt { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.5; }
-.sticky-txt strong { color: #C9A96E; display: block; font-size: 13px; }
-.sticky-btn { background: #C9A96E; color: #1E2A3A; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 11px 16px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-@media(min-width:800px){ .sticky-bar { display: none; } }
+/* sections bg */
+.bg-light{background:#F5F0E8;color:#1E2A3A}
+.bg-warm{background:#EDE9E2;color:#1E2A3A}
+.bg-dark{background:#1E2A3A;color:#fff}
 </style>
 
 </head>
 <body>
-
-<!-- Netlify form detection -->
 
 <form name="ikiru-subscribers" netlify netlify-honeypot="bot-field" hidden>
   <input type="email" name="email">
@@ -363,9 +402,9 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
     <div class="pillar"><span class="pillar-code">MIN</span><span class="pillar-k">眠</span></div>
   </div>
   <div class="checks">
-    <div class="check"><div class="chk">v</div><span>2 minutes</span></div>
-    <div class="check"><div class="chk">v</div><span>No account</span></div>
-    <div class="check"><div class="chk">v</div><span>Free</span></div>
+    <div class="check"><div class="chk">✓</div><span>2 minutes</span></div>
+    <div class="check"><div class="chk">✓</div><span>No account</span></div>
+    <div class="check"><div class="chk">✓</div><span>Free</span></div>
   </div>
   <button class="btn-start" id="btn-start">Begin the assessment</button>
   <div class="author">
@@ -384,15 +423,14 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
     <span class="quiz-brand">IKIRU</span>
     <span class="quiz-counter" id="quiz-counter">1 / 7</span>
   </div>
-  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="progress-bar" id="progress-bar"></div>
   <div class="quiz-body">
     <div class="q-label" id="q-label">Question 1</div>
     <p class="q-text" id="q-text"></p>
     <div class="choices" id="choices"></div>
   </div>
-  <div class="quiz-nav">
-    <button class="btn-back" id="btn-back">←</button>
-    <button class="btn-next" id="btn-next">Continue</button>
+  <div class="quiz-footer">
+    <button class="btn-back" id="btn-back">← Back</button>
   </div>
 </div>
 
@@ -401,92 +439,94 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
 <div class="page" id="p-loading">
   <div class="load-kanji" id="load-kanji">生</div>
   <p class="load-text">Analysing your system...</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:#9A9488;margin-top:8px;letter-spacing:1px;">Mapping your four Japanese balance systems.</p>
 </div>
 
-<!-- ══ SCORE ══ -->
+<!-- ══════════════════════════════════
+  SCORE PAGE
+  1. Type reveal
+  2. "This is your body right now"
+  3. Balance map (compact)
+  4. Japanese wisdom + Step 1 visible + Steps 2&3 locked
+  5. Email gate
+══════════════════════════════════ -->
 
 <div class="page" id="p-score">
-  <div class="score-wrap">
-    <div class="score-hero">
-      <p class="score-label">IKIRU System Analysis</p>
-      <div class="score-kanji" id="score-kanji">禅</div>
-      <p class="score-label">Your Primary Disruption</p>
-      <p class="score-type" id="score-type">ZEN — <em>Calmness</em></p>
-      <p class="score-tagline" id="score-tagline"></p>
-    </div>
+  <div class="sw">
 
 ```
-<div class="score-section">
-  <div class="section-label">System Status</div>
-  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#7A7468;margin-bottom:3px;line-height:1.65;">Most people begin to feel a shift within 3 days.</p>
-  <p style="font-size:11px;color:#9A9488;margin-bottom:14px;">Based on Japanese longevity research.</p>
+<!-- 1. Type reveal -->
+<div class="sh">
+  <span class="sh-eye">Your IKIRU Diagnosis</span>
+  <div class="sh-kanji" id="score-kanji">禅</div>
+  <p class="sh-type" id="score-type">ZEN — <em>Calmness</em></p>
+  <p class="sh-tagline" id="score-tagline"></p>
+</div>
+
+<!-- 2. Body right now -->
+<div class="sb-now">
+  <span class="sb-now-label">This is happening in your body right now</span>
+  <p class="sb-now-text" id="score-body"></p>
+</div>
+<!-- credibility line -->
+<div style="padding:8px 24px 12px;border-bottom:1px solid rgba(28,26,23,.06)">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#9A9488;line-height:1.6;">Your answers were mapped across four Japanese balance systems.</p>
+</div>
+
+<!-- 3. Balance map -->
+<div class="sb-map">
+  <div class="sb-map-label">Your Four Systems</div>
   <div id="pillar-cards"></div>
 </div>
 
-<div class="score-section" style="background:#F0E8D4;">
-  <div class="section-label">What This Means</div>
-  <div class="score-summary-box">
-    <p class="score-summary-text" id="score-summary"></p>
+<!-- 4. Japanese wisdom + Step 1 open + 2&3 locked -->
+<div class="sb-ritual">
+  <!-- Japanese wisdom line: the one IKIRU sentence -->
+  <span class="sb-wisdom-jp" id="sb-wisdom-jp">忙しいときほど、一服する。</span>
+  <p class="sb-wisdom-en" id="sb-wisdom-en">In Japan, the busier the day — the more important the pause.</p>
+  <!-- Ritual name -->
+  <span class="sb-ritual-label">Your reset ritual</span>
+  <span class="sb-ritual-name" id="sb-ritual-name">一服</span>
+  <span class="sb-ritual-romaji" id="sb-ritual-romaji">Ippuku · The Pause</span>
+  <!-- Step 1: fully visible -->
+  <div class="sb-step1">
+    <span class="sb-step1-label">Step 1 of 3</span>
+    <p class="sb-step1-text" id="sb-step1"></p>
+  </div>
+  <!-- Steps 2&3: locked -->
+  <div class="sb-locked">
+    <p class="sb-locked-text"><span>🔒</span>Steps 2 and 3 are in your free reset guide</p>
   </div>
 </div>
 
-<div class="score-section">
-  <div class="section-label">Why This Matters</div>
-  <div class="social-proof-box">
-    <div class="social-proof-text">
-      <strong>Most people with this pattern start to feel a shift within 3 days.</strong>
-      <span>Thousands have used the IKIRU assessment to restore their daily rhythm.</span>
+<!-- 5. Email gate -->
+<div class="sb-email">
+  <div class="sb-email-bridge">
+    <p class="seb-title">Your complete reset is ready.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#1C1A17;margin-bottom:5px;">Finish your 3-minute ritual tonight.</p>
+    <p class="seb-sub">Free · matched to your diagnosis · unlock in 10 seconds</p>
+  </div>
+  <div class="email-card">
+    <div class="ec-top">
+      <span class="ec-top-kanji" id="ec-kanji">禅</span>
+      <div class="ec-top-text">
+        <span class="ec-top-label" id="ec-label">ZEN Reset — your path</span>
+        <p class="ec-top-title">Unlock your full 3-step reset ritual</p>
+      </div>
     </div>
-    <div class="social-proof-badge">
-      <span class="social-proof-num">3</span>
-      <span class="social-proof-unit">days</span>
+    <div class="ec-body">
+      <div class="ec-what">
+        <div class="ec-what-item"><div class="ec-dot"></div>The complete 3-step ritual — all steps, tonight</div>
+        <div class="ec-what-item"><div class="ec-dot"></div>Why this works — Japanese cultural context</div>
+        <div class="ec-what-item"><div class="ec-dot"></div>Your personalised 7-day reset path — free, to your inbox</div>
+      </div>
+      <input class="ec-input" id="email-input" type="email" placeholder="your@email.com" autocomplete="email">
+      <button class="ec-btn" id="btn-unlock">
+        Unlock my reset ritual →
+      </button>
+      <p class="ec-note">No spam. Unsubscribe any time.</p>
+      <p style="text-align:center;font-size:11px;color:#9A9488;font-style:italic;font-family:'Cormorant Garamond',serif;margin-top:8px;padding-top:8px;border-top:1px solid rgba(28,26,23,.06);">Join 3,000+ people restoring their rhythm.</p>
     </div>
-  </div>
-</div>
-
-<div class="score-section">
-  <div class="section-label">Try This Right Now</div>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:#3D3A33;line-height:1.75;margin-bottom:16px;">Before you do anything else — try this. It takes 3 minutes. It works on the first attempt.</p>
-  <div class="practice-box">
-    <p class="practice-label">3-Minute Practice</p>
-    <p class="practice-title" id="practice-title"></p>
-    <div id="practice-steps"></div>
-  </div>
-  <div style="padding:16px;background:rgba(255,255,255,.6);border:1px solid rgba(28,26,23,.1);">
-    <p class="cta-instruction">Start the practice now.<br>When you are done, continue below.</p>
-    <p class="micro-q">Did you complete the 3-minute reset?</p>
-    <button class="btn-practice-done" id="btn-practice-done">Yes — show my full reset</button>
-  </div>
-</div>
-
-<div class="email-section" id="email-section">
-  <div class="after-practice" id="after-practice">
-    <div class="after-text"><p id="after-text-content"></p></div>
-    <p class="after-path">Your 7-day path builds on this. Each day, one small practice. After 7 days, rest stops being something you pursue — it becomes something that arrives.</p>
-  </div>
-  <div class="unlock-intro">
-    <p>Your full IKIRU reset path is ready.<br>Unlock it free in 10 seconds.</p>
-  </div>
-  <div class="result-badge">
-    <span class="result-badge-k" id="badge-kanji">禅</span>
-    <div>
-      <span class="result-badge-label">Primary Disruption</span>
-      <span class="result-badge-type" id="badge-type">ZEN — Calmness</span>
-    </div>
-  </div>
-  <div class="email-box">
-    <div class="email-gold-line"></div>
-    <p class="email-title">Unlock your full IKIRU Reset</p>
-    <p class="email-sub">Your 7-day recovery path · The full guide · Free, to your inbox.</p>
-    <div class="email-items">
-      <div class="email-item"><div class="email-dot"></div>Why your system is stuck — explained clearly</div>
-      <div class="email-item"><div class="email-dot"></div>The full 3-minute practice with all 3 steps</div>
-      <div class="email-item"><div class="email-dot"></div>Your personal 7-day recovery path</div>
-      <div class="email-item"><div class="email-dot"></div>The IKIRU Quick Reset guide — free, instantly</div>
-    </div>
-    <input class="email-input" id="email-input" type="email" placeholder="your@email.com" autocomplete="email">
-    <button class="btn-unlock" id="btn-unlock">Unlock My IKIRU Reset</button>
-    <p class="email-note">No spam. Unsubscribe any time.</p>
   </div>
 </div>
 ```
@@ -494,14 +534,78 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
   </div>
 </div>
 
-<!-- ══ LP ══ -->
+<!-- ══════════════════════════════════
+  RESET PAGE — full experience after email
+══════════════════════════════════ -->
+
+<div class="page" id="p-reset">
+  <div class="rw">
+
+```
+<div class="r-unlocked">
+  <p>✓ &nbsp;Your reset ritual is unlocked</p>
+</div>
+
+<div class="r-hero">
+  <div class="r-bg-k" id="r-bg-k">禅</div>
+  <span class="r-label">Your 3-Minute Reset Ritual</span>
+  <span class="r-jp" id="r-jp">一服</span>
+  <span class="r-romaji" id="r-romaji">Ippuku · The Pause</span>
+  <p class="r-headline" id="r-headline">One cup of tea. One pause from motion to stillness.</p>
+</div>
+
+<div class="r-catch">
+  <span class="r-catch-jp" id="r-catch-jp">忙しいときほど、一服する。</span>
+  <p class="r-catch-en" id="r-catch-en">In Japan, the busier the day — the more important the pause.</p>
+</div>
+
+<div class="r-culture">
+  <span class="r-culture-head">The Japanese practice behind this</span>
+  <p class="r-culture-body" id="r-culture-body"></p>
+  <p class="r-culture-pull" id="r-culture-pull"></p>
+</div>
+
+<div class="r-steps">
+  <span class="r-steps-head">Try this now — 3 minutes</span>
+  <div id="r-steps-list"></div>
+</div>
+
+<div class="r-signal">
+  <div class="r-signal-inner">
+    <p class="r-signal-text" id="r-signal-text"></p>
+  </div>
+</div>
+
+<div class="r-day1">
+  <span class="r-d1-label">This is Day 1</span>
+  <p class="r-d1-title">Japanese habits work because they repeat. Not because they are complicated.</p>
+  <p class="r-d1-body">The body does not change in one session. It changes when the same small signal arrives at the same time, every day. That is all the 7-Day Reset is.</p>
+  <div class="r-d1-divider"></div>
+  <span class="r-d1-cta-label" id="r-d1-cta-label">The 7-Day Reset</span>
+  <p class="r-d1-cta-text">One ritual a day. Ten minutes. Seven days. That is enough to rebuild a rhythm the body remembers.</p>
+</div>
+
+<div class="r-cta">
+  <p class="r-cta-sub">Most people notice a shift within 3 days.<br>The 7-Day Reset builds what you just started.</p>
+  <button class="r-cta-btn" id="btn-to-lp">Continue to the 7-Day Reset →</button>
+  <p class="r-cta-note">$47 · One time · 30-day money-back guarantee</p>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  LP PAGE — $47 offer
+══════════════════════════════════ -->
 
 <div class="page" id="p-lp">
+
   <div class="lp-hero">
     <div class="lp-hero-bg" id="lp-bg-k">禅</div>
     <div class="lp-hero-content">
-      <p class="lp-eyebrow" id="lp-eyebrow">IKIRU · 生きる · ZEN Reset</p>
-      <h1 class="lp-h1" id="lp-h1"></h1>
+      <p class="lp-eyebrow" id="lp-eyebrow">IKIRU · 生きる</p>
+      <h1 class="lp-h1" id="lp-h1"><span class="gold">loading...</span></h1>
       <p class="lp-sub" id="lp-sub"></p>
       <div class="lp-div"></div>
       <p class="lp-note">This is not a personal failing.<br><strong id="lp-note-strong"></strong></p>
@@ -509,25 +613,69 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
   </div>
 
   <div class="lp-truths" id="lp-truths"></div>
-  <div class="lp-signal"><p id="lp-signal"></p></div>
+  <div class="lp-signal-bar"><p id="lp-signal"></p></div>
 
-  <div class="lp-section lp-section-light">
-    <div class="lp-section-inner">
-      <span class="lp-label" style="color:rgba(155,126,75,.7);">A NOTE FROM HARU</span>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:rgba(30,42,58,.72);margin-bottom:12px;">I grew up watching my grandmother live to 94. She never went to a gym. She never downloaded a wellness app.</p>
-      <div class="lp-pull">Every evening she made barley tea and sat quietly before bed. She was not trying to be healthy. She was just living.</div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:rgba(30,42,58,.72);margin-bottom:12px;">When I left Japan I became a registered dietitian, a personal trainer. I researched 40+ countries. I had more health knowledge than most people will ever have.</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#1E2A3A;margin-bottom:16px;">And I was exhausted.</p>
-      <div class="lp-gold-box">
-        <p>IKIRU is not a health program. It is a return to the way the body already knows how to live.</p>
-        <span class="pull">In Japan, nobody tries to be well. They just live in a way that makes wellness inevitable.</span>
-        <p style="font-size:11px;color:#8A9BB0;margin-top:10px;">Haru · Japanese Registered Dietitian · Personal Trainer · 40+ countries</p>
+  <!-- Offer -->
+
+  <div class="lp-section bg-dark">
+    <div class="lp-si">
+      <div class="offer-grid">
+        <div>
+          <span class="lp-label" id="lp-offer-label">The 7-Day Reset</span>
+          <h2 class="offer-h2">Continue the full<br><em style="color:#C9A96E;">7-Day Reset.</em></h2>
+          <p style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:18px;">One ritual a day. Ten minutes. No equipment. Each day builds on the last.</p>
+          <div class="day-list" id="lp-days"></div>
+          <p class="price-note">One session with a wellness coach costs $150. You leave with advice.</p>
+          <p class="price-main">This costs $47. <em>You leave with a new rhythm.</em></p>
+          <div class="inc-box">
+            <span class="inc-head">What's included</span>
+            <div class="inc-item">7 daily rituals rooted in Japanese tradition</div>
+            <div class="inc-item">The cultural context behind each practice</div>
+            <div class="inc-item">10 minutes a day. No equipment needed.</div>
+            <div class="inc-item">Yours to keep forever</div>
+          </div>
+          <div class="bridge-box">
+            <span class="lp-label" style="font-size:8px;margin-bottom:8px;">What Comes Next</span>
+            <p>This is your entry point. IKIRU is a complete system of five pillars.</p>
+            <p class="bridge-aft">After 7 days, your mind slows down.<br>After 21 days, your whole life finds a new rhythm.</p>
+            <a href="https://buy.stripe.com/9B6eVd8hO9xO9S9cGhf7i02" style="font-size:10px;color:rgba(201,169,110,.45);text-decoration:none;display:block;margin-top:6px;">21-Day IKIRU Protocol · $297</a>
+            <a href="https://buy.stripe.com/7sY5kD9lS5hyggx21Df7i03" style="font-size:10px;color:rgba(201,169,110,.45);text-decoration:none;display:block;margin-top:4px;">IKIRU Membership · $29/month</a>
+          </div>
+        </div>
+        <div>
+          <div class="offer-card">
+            <div class="offer-price">
+              <span class="offer-price-num">$47</span>
+              <span class="offer-price-lbl">one time · instant access</span>
+            </div>
+            <a href="#" class="btn-cta" id="lp-cta-btn">Start my 7-Day Reset</a>
+            <p class="offer-note">Instant access · 30-day guarantee</p>
+            <p class="offer-guar">If you don't notice a genuine shift within 30 days — full refund. No questions. One email.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="lp-section lp-section-warm">
-    <div class="lp-section-inner">
+  <!-- Testimonials -->
+
+  <div class="lp-section bg-light">
+    <div class="lp-si">
+      <span class="lp-label" style="color:rgba(155,126,75,.7);">What People Notice First</span>
+      <h2 class="lp-h2" style="color:#1E2A3A;">Nobody talks about it until they feel it.</h2>
+      <p class="lp-body" style="color:#1E2A3A;">Not dramatic. No sudden transformation. More like something lifting — a quiet that wasn't there before.</p>
+      <div class="tcards">
+        <div class="tcard"><q>"I didn't expect something so small to work. After the tea ritual, my mind finally slowed down. I didn't realise how loud it had been until it got quiet."</q><cite>Emma, 41 — London</cite></div>
+        <div class="tcard"><q>"Day 3 changed my sleep. Not the amount — the quality. I woke up feeling genuinely rested for the first time in months."</q><cite>Daniel, 38 — Sydney</cite></div>
+        <div class="tcard"><q>"It's strange to say, but my body felt safe again. Like it finally had permission to stop."</q><cite>Laura, 45 — Toronto</cite></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Japanese way -->
+
+  <div class="lp-section bg-warm">
+    <div class="lp-si">
       <span class="lp-label" style="color:rgba(155,126,75,.7);display:block;text-align:center;">Why the Japanese Way Is Different</span>
       <h2 class="lp-h2" style="text-align:center;">Most modern wellness asks one question.</h2>
       <div class="two-q">
@@ -555,108 +703,59 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
     </div>
   </div>
 
-  <div class="lp-section lp-section-dark">
-    <div class="lp-section-inner">
+  <!-- Why it works -->
+
+  <div class="lp-section bg-dark">
+    <div class="lp-si">
       <span class="lp-label">Why This Works</span>
       <h2 class="lp-h2">The body responds to signals —<br><em style="color:#C9A96E;">not to effort.</em></h2>
-      <p class="lp-body">When stress continues too long, the body stays in constant alert. The laptop at 10pm. The mind still running after the lights go out. Most approaches solve this by doing more. But the body responds to small, consistent cues that say:</p>
+      <p class="lp-body">When stress continues too long, the body stays in constant alert. Most approaches solve this by doing more. But the body responds to small, consistent cues that say:</p>
       <div class="safe-box"><p>You are safe.<br><em>You can stop.</em></p></div>
-      <div class="rituals">
-        <div class="ritual"><span class="ritual-k">茶</span><span class="ritual-n">Tea</span><span class="ritual-d">A cup held with both hands. Nowhere to be.</span></div>
-        <div class="ritual"><span class="ritual-k">歩</span><span class="ritual-n">Walking</span><span class="ritual-d">Movement without destination. The body resets.</span></div>
-        <div class="ritual"><span class="ritual-k">静</span><span class="ritual-n">Stillness</span><span class="ritual-d">No input. The mind stops producing noise.</span></div>
+    </div>
+  </div>
+
+  <!-- Haru -->
+
+  <div class="lp-section bg-light">
+    <div class="lp-si">
+      <span class="lp-label" style="color:rgba(155,126,75,.7);">A NOTE FROM HARU</span>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:rgba(30,42,58,.72);margin-bottom:12px;">I grew up watching my grandmother live to 94. She never went to a gym. She never downloaded a wellness app.</p>
+      <div class="lp-pull">Every evening she made barley tea and sat quietly before bed. She was not trying to be healthy. She was just living.</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:rgba(30,42,58,.72);margin-bottom:12px;">When I left Japan, I became a registered dietitian and personal trainer. I researched 40+ countries. I had more health knowledge than most people will ever have.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#1E2A3A;margin-bottom:16px;">And I was exhausted.</p>
+      <div class="lp-gold-box">
+        <p>IKIRU is not a health program. It is a return to the way the body already knows how to live.</p>
+        <span class="pull">In Japan, nobody tries to be well. They just live in a way that makes wellness inevitable.</span>
+        <p style="font-size:11px;color:#8A9BB0;margin-top:10px;">Haru · Japanese Registered Dietitian · Personal Trainer · 40+ countries</p>
       </div>
     </div>
   </div>
 
-  <div class="lp-section lp-section-blue">
-    <div class="lp-section-inner">
-      <div style="background:#1E2A3A;border-top:2px solid #C9A96E;padding:32px 28px;margin-bottom:32px;">
-        <span class="lp-label" id="lp-reset-label">Your 3-Minute ZEN Reset</span>
-        <h2 class="lp-h2" style="color:#fff;" id="lp-reset-title">One cup of tea. One pause from motion to stillness.</h2>
-        <p style="font-size:14px;color:rgba(255,255,255,.5);font-style:italic;">This is not a relaxation technique. It is a signal.</p>
-      </div>
-      <div class="lp-steps" id="lp-steps"></div>
-      <div class="lp-gold-box" style="margin-top:22px;">
-        <p id="lp-reset-why"></p>
-        <span class="pull" id="lp-reset-pull"></span>
-      </div>
-      <div style="background:#1E2A3A;padding:28px;text-align:center;margin-top:22px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#fff;line-height:1.4;">This is Day 1 of your <span id="lp-reset-name">7-Day ZEN Reset</span>.<br><strong style="color:#C9A96E;font-style:italic;">You just started.</strong></p>
-      </div>
-    </div>
-  </div>
+  <!-- Vision -->
 
-  <div class="lp-section lp-section-light">
-    <div class="lp-section-inner">
-      <span class="lp-label" style="color:rgba(155,126,75,.7);">What People Notice First</span>
-      <h2 class="lp-h2">Nobody talks about it until they feel it.</h2>
-      <p class="lp-body">Not dramatic. No sudden transformation. More like something lifting — a quiet that wasn't there before.</p>
-      <div class="tcards">
-        <div class="tcard"><q>"I didn't expect something so small to work. After the tea ritual, my mind finally slowed down. I didn't realise how loud it had been until it got quiet."</q><cite>Emma, 41 — London</cite></div>
-        <div class="tcard"><q>"Day 3 changed my sleep. Not the amount — the quality. I woke up feeling genuinely rested for the first time in months."</q><cite>Daniel, 38 — Sydney</cite></div>
-        <div class="tcard"><q>"It's strange to say, but my body felt safe again. Like it finally had permission to stop."</q><cite>Laura, 45 — Toronto</cite></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="lp-section lp-section-dark">
-    <div class="lp-section-inner">
-      <div style="border-left:2px solid #C9A96E;padding:20px;background:rgba(255,255,255,.025);margin-bottom:40px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#C9A96E;margin-bottom:8px;">Most people who feel this way wait for a holiday to fix it.</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#C9A96E;margin-bottom:8px;">The holiday ends. Nothing changes.</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.35);">Not because rest doesn't work. Because the body never learned when it was safe to stop.</p>
-      </div>
+  <div class="lp-section bg-dark">
+    <div class="lp-si">
       <div class="vision-box" id="vision-box">
-        <span class="lp-label v-label">Imagine This Instead</span>
+        <span class="lp-label" style="color:rgba(30,42,58,.45);">Imagine This Instead</span>
         <div class="vline" id="vl1">Imagine waking up and your mind is already quiet.</div>
         <div class="vline" id="vl2">Not because nothing happened yesterday.</div>
         <div class="vline" id="vl3">But because your body finally knows how to let it go.</div>
         <div class="vline" id="vl4">Your shoulders are lower. The evening belongs to you.</div>
         <div class="vline" id="vl5">You stop waiting to feel like yourself —</div>
         <span class="vclose" id="vl6">because you already do.</span>
-        <p class="vision-cta">This is what your <span id="lp-vision-name">7-Day ZEN Reset</span> begins to build.</p>
+        <p class="vision-cta">This is what your <span id="lp-vision-name">7-Day Reset</span> begins to build.</p>
       </div>
     </div>
   </div>
 
-  <div class="lp-section lp-section-dark">
-    <div class="lp-section-inner">
-      <div class="offer-grid">
-        <div>
-          <span class="lp-label" id="lp-offer-label">The 7-Day ZEN Reset</span>
-          <h2 class="offer-h2">One small ritual a day.<br>Ten minutes. No equipment.</h2>
-          <div class="day-list" id="lp-days"></div>
-          <p class="price-note">One session with a wellness coach costs $150. You leave with advice.</p>
-          <p class="price-main">This costs $47. <em>You leave with a new rhythm.</em></p>
-          <div class="includes-box">
-            <span class="includes-head">What's included</span>
-            <div class="inc-item">7 guided daily rituals</div>
-            <div class="inc-item">Breathing audio exercises</div>
-            <div class="inc-item">Daily structure in 10 minutes</div>
-            <div class="inc-item">Nervous system reset rooted in Japanese practice</div>
-            <div class="inc-item">Yours to keep forever</div>
-          </div>
-          <div class="bridge-box">
-            <span class="lp-label" style="font-size:8px;margin-bottom:8px;">What Comes Next</span>
-            <p>ZEN is your entry point. IKIRU is a complete system of five pillars.</p>
-            <p class="bridge-aft">After 7 days, your mind slows down.<br>After 21 days, your whole life finds a new rhythm.</p>
-            <a href="https://buy.stripe.com/9B6eVd8hO9xO9S9cGhf7i02" class="bridge-url" style="color:rgba(201,169,110,.5);text-decoration:none;display:block;margin-top:6px;">The 21-Day IKIRU Protocol · $297 · Learn more</a>
-            <a href="https://buy.stripe.com/7sY5kD9lS5hyggx21Df7i03" class="bridge-url" style="color:rgba(201,169,110,.5);text-decoration:none;display:block;margin-top:4px;">IKIRU Membership · $29/month · Learn more</a>
-          </div>
-        </div>
-        <div>
-          <div class="offer-card">
-            <div class="offer-price">
-              <span class="offer-price-num">$47</span>
-              <span class="offer-price-lbl">one time · instant access</span>
-            </div>
-            <a href="https://buy.stripe.com/9B64gz69GfWcaWdeOpf7i01" class="btn-cta" id="lp-cta-btn">Start my 7-Day Reset</a>
-            <p class="offer-note">Instant access · 30-day guarantee</p>
-            <p class="offer-guar">If you don't notice a genuine shift within 30 days — full refund. No questions. One email.</p>
-          </div>
-        </div>
-      </div>
+  <!-- ── BOTTOM CTA (repeat after vision) ── -->
+
+  <div style="background:#1E2A3A;padding:32px 28px;border-top:1px solid rgba(201,169,110,.15);">
+    <div style="max-width:480px;margin:0 auto;text-align:center;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.5);margin-bottom:12px;">Ready to begin</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#F5F0E8;line-height:1.5;margin-bottom:20px;">One ritual a day. Ten minutes.<br><em style="color:#C9A96E;">Seven days to rebuild your rhythm.</em></p>
+      <a href="#" id="lp-cta-btn-bottom" class="btn-cta" style="display:block;max-width:320px;margin:0 auto 10px;">Start my 7-Day Reset</a>
+      <p style="font-size:11px;color:rgba(255,255,255,.25);font-family:'Cormorant Garamond',serif;font-style:italic;">$47 · Instant access · 30-day money-back guarantee</p>
     </div>
   </div>
 
@@ -666,482 +765,369 @@ text-align: center; text-decoration: none; cursor: pointer; margin-bottom: 10px;
   </div>
 </div>
 
-<!-- Sticky bar (LP only) -->
-
 <div class="sticky-bar" id="sticky-bar">
   <div class="sticky-txt">
-    <strong id="sticky-title">7-Day ZEN Reset · $47</strong>
+    <strong id="sticky-title">7-Day Reset · $47</strong>
     One ritual a day. Ten minutes.
   </div>
-  <a href="https://buy.stripe.com/9B64gz69GfWcaWdeOpf7i01" class="sticky-btn">Start now</a>
+  <a href="#" class="sticky-btn" id="sticky-cta">Start now</a>
 </div>
 
 <script>
-var QUESTIONS = [
-  { text: "Be honest -- how do you actually feel most days?", choices: [
-    { text: "Tired, even when I've slept. Like rest doesn't reach me.", type: "min" },
-    { text: "Wired and anxious. My mind doesn't stop.", type: "zen" },
-    { text: "Flat. Low energy. Hard to find motivation.", type: "wa" },
-    { text: "Stiff, tense, or physically disconnected from my body.", type: "ki" }
+var Q=[
+  {t:"Be honest — how do you actually feel most days?",c:[
+    {tx:"Tired, even when I've slept. Like rest doesn't reach me.",y:"min"},
+    {tx:"Wired and anxious. My mind doesn't stop.",y:"zen"},
+    {tx:"Flat. Low energy. Hard to find motivation.",y:"wa"},
+    {tx:"Stiff, tense, or physically disconnected from my body.",y:"ki"}
   ]},
-  { text: "Where do you feel most out of balance?", choices: [
-    { text: "Food, digestion, energy -- my relationship with nourishment.", type: "wa" },
-    { text: "Thoughts, focus, emotional waves I cannot settle.", type: "zen" },
-    { text: "Physical vitality -- movement, strength, body rhythm.", type: "ki" },
-    { text: "Sleep, recovery, the quality of my rest.", type: "min" }
+  {t:"Where do you feel most out of balance?",c:[
+    {tx:"Food, digestion, energy — my relationship with nourishment.",y:"wa"},
+    {tx:"Thoughts, focus, emotional waves I cannot settle.",y:"zen"},
+    {tx:"Physical vitality — movement, strength, body rhythm.",y:"ki"},
+    {tx:"Sleep, recovery, the quality of my rest.",y:"min"}
   ]},
-  { text: "What drains you most?", choices: [
-    { text: "Too many decisions. Too much information. The mind won't stop.", type: "zen" },
-    { text: "Moving through life but feeling no physical vitality.", type: "ki" },
-    { text: "Food becomes an afterthought when life accelerates.", type: "wa" },
-    { text: "Working too late. The inability to wind down.", type: "min" }
+  {t:"What drains you most?",c:[
+    {tx:"Too many decisions. Too much information. The mind won't stop.",y:"zen"},
+    {tx:"Moving through life but feeling no physical vitality.",y:"ki"},
+    {tx:"Food becomes an afterthought when life accelerates.",y:"wa"},
+    {tx:"Working too late. The inability to wind down.",y:"min"}
   ]},
-  { text: "In health, what feels most missing?", choices: [
-    { text: "The quality and intentionality of how I nourish myself.", type: "wa" },
-    { text: "Mental stillness. A mind that can simply be quiet.", type: "zen" },
-    { text: "Physical strength, posture, and freedom of movement.", type: "ki" },
-    { text: "Deep sleep. The feeling of true restoration.", type: "min" }
+  {t:"In health, what feels most missing?",c:[
+    {tx:"The quality and intentionality of how I nourish myself.",y:"wa"},
+    {tx:"Mental stillness. A mind that can simply be quiet.",y:"zen"},
+    {tx:"Physical strength, posture, and freedom of movement.",y:"ki"},
+    {tx:"Deep sleep. The feeling of true restoration.",y:"min"}
   ]},
-  { text: "When did you last feel genuinely well-rested and clear?", choices: [
-    { text: "I can't remember. My energy has been low for a long time.", type: "wa" },
-    { text: "On a holiday where I could finally switch off completely.", type: "zen" },
-    { text: "After a week of good movement and physical rhythm.", type: "ki" },
-    { text: "After a rare night of genuinely deep, uninterrupted sleep.", type: "min" }
+  {t:"When did you last feel genuinely well-rested and clear?",c:[
+    {tx:"I can't remember. My energy has been low for a long time.",y:"wa"},
+    {tx:"On a holiday where I could finally switch off completely.",y:"zen"},
+    {tx:"After a week of good movement and physical rhythm.",y:"ki"},
+    {tx:"After a rare night of genuinely deep, uninterrupted sleep.",y:"min"}
   ]},
-  { text: "Which pattern do you recognise most in yourself?", choices: [
-    { text: "I eat well, but my body doesn't seem to respond the way it should.", type: "wa" },
-    { text: "I'm productive, but I can never fully decompress afterwards.", type: "zen" },
-    { text: "My energy is unpredictable -- good days and bad days with no pattern.", type: "ki" },
-    { text: "I sleep enough hours, but wake up feeling like I didn't.", type: "min" }
+  {t:"Which pattern do you recognise most in yourself?",c:[
+    {tx:"I eat well, but my body doesn't seem to respond the way it should.",y:"wa"},
+    {tx:"I'm productive, but I can never fully decompress afterwards.",y:"zen"},
+    {tx:"My energy is unpredictable — good days and bad days with no pattern.",y:"ki"},
+    {tx:"I sleep enough hours, but wake up feeling like I didn't.",y:"min"}
   ]},
-  { text: "Which feels most true right now?", choices: [
-    { text: "Changing how I eat would change almost everything.", type: "wa" },
-    { text: "I want -- desperately -- to stop overthinking.", type: "zen" },
-    { text: "I want to inhabit my body with more intention and vitality.", type: "ki" },
-    { text: "I just want to sleep deeply and wake up restored.", type: "min" }
+  {t:"Which feels most true right now?",c:[
+    {tx:"Changing how I eat would change almost everything.",y:"wa"},
+    {tx:"I want — desperately — to stop overthinking.",y:"zen"},
+    {tx:"I want to inhabit my body with more intention and vitality.",y:"ki"},
+    {tx:"I just want to sleep deeply and wake up restored.",y:"min"}
   ]}
 ];
 
-var PILLAR = {
-  zen: {
-    kanji: "禅", name: "ZEN", label: "Calmness", color: "#2E4060",
-    tagline: "Your mind has not fully switched off in a long time.",
-    summary: "Your nervous system shows signs of chronic overstimulation. The off-switch has become difficult to find -- not because of stress, but because the system has been running at low-level alarm for so long that rest no longer feels natural.",
-    pracTitle: "One cup of tea. One pause from motion to stillness.",
-    pracSteps: [
-      "Make one cup of tea. Leave your phone in another room before you sit down.",
-      "Hold the cup with both hands. Pause before the first sip. Feel the warmth.",
-      "When the cup is empty -- sit for one more minute. Do not plan. Just be in the room."
+var P={
+  zen:{
+    kanji:"禅",name:"ZEN",label:"Calmness",color:"#2E4060",
+    tagline:"Your mind has not fully switched off in a long time.",
+    body:"Your nervous system has been running at low-level alarm for so long that rest no longer feels natural. This is not a stress problem. It is a system that has lost its signal to stop.",
+    wisdomJp:"忙しいときほど、一服する。",
+    wisdomEn:"In Japan, the busier the day — the more important the pause.",
+    ritualName:"一服",ritualRomaji:"Ippuku · The Pause",
+    step1:"Make one cup of tea. Leave your phone in another room.",
+    ecLabel:"ZEN Reset — your path",
+    // Reset page
+    rBgK:"禅",rJp:"一服",rRomaji:"Ippuku · The Pause",
+    rHeadline:"One cup of tea. One pause from motion to stillness.",
+    catchJp:"忙しいときほど、一服する。",
+    catchEn:"In Japan, the busier the day — the more important the pause.",
+    cultureBody:"In Japan, there is a practice called <strong>一服 (Ippuku)</strong> — the deliberate pause. Even during the busiest working day, Japanese people stop for tea. Not to drink quickly. To hold the cup with both hands and be nowhere else for a few minutes.",
+    culturePull:"The body cannot distinguish between danger and busyness. 一服 teaches it the difference.",
+    steps:[
+      {a:"Make one cup of tea.",n:"Phone in another room. This is not optional — it is the signal."},
+      {a:"Hold the cup with both hands.",n:"Feel the warmth before the first sip. Both hands anchor you to the present moment."},
+      {a:"When the cup is empty — sit one more minute.",n:"Don't plan. Don't check anything. Just be in the room. This is where the shift happens."}
     ],
-    afterPractice: "That feeling -- the shoulders dropping, the breathing slowing -- that is the signal the body has been waiting for. Repeated daily, it becomes automatic.",
-    h1gold: "You're not burned out.", h1dim: "You're not depressed.",
-    herosub: "You just haven't been able to fully stop in a very long time.",
-    heronote: "It happens when the body loses its signal to stop -- and that signal can be restored.",
-    truths: ["Work ends. Your mind doesn't.", "You sleep. But you wake up tired.", "Weekends pass. You still don't feel rested.", "You keep waiting to feel like yourself again."],
-    signal: "This is not a willpower problem. The body has lost its signal to stop -- and that signal can be restored.",
-    eyebrow: "IKIRU - ZEN Reset",
-    resetLabel: "Your 3-Minute ZEN Reset",
-    resetTitle: "One cup of tea. One pause from motion to stillness.",
-    resetWhy: "The practice of tea is not about the tea. It is about the pause.",
-    resetPull: "That pause, repeated daily, teaches the body a new rhythm.",
-    resetName: "7-Day ZEN Reset",
-    offerLabel: "The 7-Day ZEN Reset",
-    days: [["Day 1","Tea"],["Day 2","Walk"],["Day 3","Breath"],["Day 4","Observe"],["Day 5","Nature"],["Day 6","Stillness"],["Day 7","Daily life"]]
+    signal:"That feeling — shoulders dropping, breathing slowing — is the body's alarm signal switching off. Repeated daily, rest stops being something you pursue. It becomes something that arrives.",
+    d1Label:"The 7-Day ZEN Reset",
+    h1gold:"You're not burned out.",h1dim:"You're not depressed.",h1rhythm:"Your body just lost its rhythm.",
+    herosub:"You just haven't been able to fully stop in a very long time.",
+    heronote:"It happens when the body loses its signal to stop — and that signal can be restored.",
+    truths:["Work ends. Your mind doesn't.","You sleep. But you wake up tired.","Weekends pass. You still don't feel rested.","You keep waiting to feel like yourself again."],
+    lpSignal:"This is not a willpower problem. The body has lost its signal to stop — and that signal can be restored.",
+    stripe:"https://buy.stripe.com/9B64gz69GfWcaWdeOpf7i01",
+    eyebrow:"IKIRU — ZEN Reset",offerLabel:"The 7-Day ZEN Reset",resetName:"7-Day ZEN Reset",
+    days:[["Day 1","一服 — Tea"],["Day 2","歩 — Walk"],["Day 3","呼吸 — Breath"],["Day 4","観 — Observe"],["Day 5","自然 — Nature"],["Day 6","静 — Stillness"],["Day 7","日常 — Daily life"]]
   },
-  wa: {
-    kanji: "和", name: "WA", label: "Nourishment", color: "#5A6E2E",
-    tagline: "You eat. But your body is not fully absorbing what it receives.",
-    summary: "Your gut shows signs of absorption disruption. Even when the food is right, the body is not fully converting it -- resulting in low energy after meals, unexplained cravings, and a system running below its potential.",
-    pracTitle: "One meal. Eaten slowly. With full attention.",
-    pracSteps: [
-      "Choose one meal today where every ingredient is real -- nothing you can't name.",
-      "Put your utensils down between every three bites. Notice the taste.",
-      "After the meal: sit still for five minutes. No phone. Let the body absorb."
+  wa:{
+    kanji:"和",name:"WA",label:"Nourishment",color:"#5A6E2E",
+    tagline:"You eat. But your body is not absorbing what it receives.",
+    body:"Your gut shows signs of absorption disruption. Even when the food is right, the body is not converting it — resulting in low energy after meals, cravings, and a system running below its capacity.",
+    wisdomJp:"食事は、整える時間だ。",
+    wisdomEn:"In Japan, a meal is not nutrition. It is time for the body to be restored.",
+    ritualName:"食の間",ritualRomaji:"Shoku no Ma · The Pause Within Eating",
+    step1:"Hold the bowl with both hands for three seconds before you eat.",
+    ecLabel:"WA Reset — your path",
+    rBgK:"和",rJp:"食の間",rRomaji:"Shoku no Ma · The Pause Within Eating",
+    rHeadline:"One meal. Eaten slowly. With both hands around the bowl.",
+    catchJp:"食事は、整える時間だ。",
+    catchEn:"In Japan, a meal is not nutrition. It is time for the body to be restored.",
+    cultureBody:"In Japan, meals are not consumed — they are received. The concept of <strong>腹八分目 (Hara Hachi Bu)</strong> — eating until 80% full — is practiced by Okinawan centenarians. But equally important is <strong>食の間 (Shoku no Ma)</strong> — the pause within eating. The bowl is held. The food is acknowledged before it is eaten.",
+    culturePull:"The body does not absorb what it receives at speed. The pause is not mindfulness — it is digestion.",
+    steps:[
+      {a:"Hold the bowl with both hands before you eat.",n:"Three seconds. This signals the body: nourishment is arriving."},
+      {a:"Put utensils down after every three bites.",n:"Notice the taste while food is still in your mouth. This activates the vagus nerve."},
+      {a:"Sit still for five minutes after the meal.",n:"No phone. No screen. This is when the body converts what it received."}
     ],
-    afterPractice: "That pause after eating -- the body registering what it received -- is what modern eating has removed. Repeated daily, absorption begins to restore itself.",
-    h1gold: "You're nourishing yourself.", h1dim: "But your body isn't absorbing it.",
-    herosub: "You eat. But your body is not converting what it receives.",
-    heronote: "This is not about eating better. It is about restoring the body's ability to absorb.",
-    truths: ["You eat well. But energy still crashes.", "Digestion feels effortful, not natural.", "Your body doesn't respond the way it should.", "You're doing everything right. And still tired."],
-    signal: "This is not a food problem. It is an absorption problem. And it can be restored.",
-    eyebrow: "IKIRU - WA Reset",
-    resetLabel: "Your 3-Minute WA Reset",
-    resetTitle: "One meal. Eaten slowly. With full attention.",
-    resetWhy: "The practice of eating is not just about the food.",
-    resetPull: "That attention, returned daily, restores what modern eating has broken.",
-    resetName: "7-Day WA Reset",
-    offerLabel: "The 7-Day WA Reset",
-    days: [["Day 1","Food as medicine"],["Day 2","80% full"],["Day 3","Fermented food"],["Day 4","One soup, three sides"],["Day 5","Seven food groups"],["Day 6","Seasonal eating"],["Day 7","Eat where you live"]]
+    signal:"That warmth spreading after eating — the body settling — is absorption beginning. Repeated daily, energy after meals stabilises. The body starts working with what you give it.",
+    d1Label:"The 7-Day WA Reset",
+    h1gold:"You're nourishing yourself.",h1dim:"But your body isn't absorbing it.",h1rhythm:"Your body just lost its rhythm.",
+    herosub:"You eat. But your body is not converting what it receives.",
+    heronote:"This is not about eating better. It is about restoring the body's ability to absorb.",
+    truths:["You eat well. But energy still crashes.","Digestion feels effortful, not natural.","Your body doesn't respond the way it should.","You're doing everything right. And still tired."],
+    lpSignal:"This is not a food problem. It is an absorption problem. And it can be restored.",
+    stripe:"https://buy.stripe.com/bJe14n41y9xOaWd21Df7i04",
+    eyebrow:"IKIRU — WA Reset",offerLabel:"The 7-Day WA Reset",resetName:"7-Day WA Reset",
+    days:[["Day 1","食の礼 — Meal ritual"],["Day 2","腹八分目 — 80% full"],["Day 3","発酵食 — Fermented"],["Day 4","一汁三菜 — One soup"],["Day 5","七種 — Seven groups"],["Day 6","旬 — Seasonal"],["Day 7","土地の食 — Local eating"]]
   },
-  ki: {
-    kanji: "気", name: "KI", label: "Vitality", color: "#8E5520",
-    tagline: "Your energy is not missing. It is leaking through a disrupted rhythm.",
-    summary: "Your energy system shows signs of rhythm disruption. The body produces energy through consistency -- not intensity. When the daily pattern is disrupted, energy becomes unpredictable: too little in the morning, unavailable in the afternoon.",
-    pracTitle: "Morning light. Before coffee. Before the phone.",
-    pracSteps: [
-      "Tomorrow morning: go outside within 30 minutes of waking. Before anything else.",
-      "Stand in natural light for five minutes. Face toward the brightest part of the sky.",
-      "Note the time. Try to repeat it for three days. This anchor begins to rebuild the rhythm."
+  ki:{
+    kanji:"気",name:"KI",label:"Vitality",color:"#8E5520",
+    tagline:"Your energy is not missing. It is leaking through a disrupted rhythm.",
+    body:"Your body's energy system shows signs of rhythm disruption. Energy is produced through consistency — not intensity. When the daily pattern breaks, energy becomes unpredictable: sluggish mornings, afternoon crashes.",
+    wisdomJp:"歩くことで、気を巡らせる。",
+    wisdomEn:"In Japan, walking is not exercise. It is how the body circulates its energy.",
+    ritualName:"朝の光",ritualRomaji:"Asa no Hikari · Morning Light",
+    step1:"Go outside within 30 minutes of waking. Before coffee. Before your phone.",
+    ecLabel:"KI Reset — your path",
+    rBgK:"気",rJp:"朝の光",rRomaji:"Asa no Hikari · Morning Light",
+    rHeadline:"Morning light. Before coffee. Before the phone.",
+    catchJp:"歩くことで、気を巡らせる。",
+    catchEn:"In Japan, walking is not exercise. It is how the body circulates its energy.",
+    cultureBody:"In Japan, the concept of <strong>体内時計 (Tainai Tokei)</strong> — the body's internal clock — has guided daily life for centuries. Farmers, monks, and craftspeople all began with the same ritual: stepping outside to receive the morning light. Not to exercise. Simply to receive. This is called <strong>朝の光を浴びる</strong> — bathing in morning light.",
+    culturePull:"Light in the morning teaches the body when the day begins. When the body knows when it starts, it learns when it can end.",
+    steps:[
+      {a:"Go outside within 30 minutes of waking.",n:"Before coffee. Before your phone. This is the only rule."},
+      {a:"Stand in natural light for 5 minutes.",n:"Face the brightest part of the sky. Cloud cover still works — it enters through the eyes."},
+      {a:"Note the time. Repeat for three days.",n:"Consistency is the signal. Same time, same light. The rhythm starts to rebuild."}
     ],
-    afterPractice: "That morning anchor -- light at the same time -- is the signal that tells the body when the day begins. When the body knows when it starts, it learns when it can end.",
-    h1gold: "Your energy isn't missing.", h1dim: "It's leaking through disrupted rhythm.",
-    herosub: "The body produces energy through consistency -- not intensity.",
-    heronote: "When the daily rhythm is disrupted, energy becomes unpredictable.",
-    truths: ["You wake up tired, before the day has started.", "Energy is available sometimes. Then suddenly gone.", "You push through. But the effort costs more than it returns.", "You want to move. But something makes you stay still."],
-    signal: "This is not about doing more. It is about restoring the rhythm that makes energy automatic.",
-    eyebrow: "IKIRU - KI Reset",
-    resetLabel: "Your 3-Minute KI Reset",
-    resetTitle: "Morning light. Before coffee. Before the phone.",
-    resetWhy: "The practice of morning light is not about waking up earlier.",
-    resetPull: "It is about teaching the body when the day begins -- so it knows when it can end.",
-    resetName: "7-Day KI Reset",
-    offerLabel: "The 7-Day KI Reset",
-    days: [["Day 1","Morning light"],["Day 2","Radio Taiso"],["Day 3","Posture"],["Day 4","Walking"],["Day 5","Daily movement"],["Day 6","Forest bathing"],["Day 7","Energy rhythm"]]
+    signal:"That sharpness in the first hour — the body actually starting — is the circadian rhythm finding its anchor. Repeated daily, energy stops being unpredictable. The body learns when to be awake. And then it learns when to rest.",
+    d1Label:"The 7-Day KI Reset",
+    h1gold:"Your energy isn't missing.",h1dim:"It's leaking through disrupted rhythm.",h1rhythm:"Your body just lost its rhythm.",
+    herosub:"The body produces energy through consistency — not intensity.",
+    heronote:"When the daily rhythm is disrupted, energy becomes unpredictable.",
+    truths:["You wake up tired, before the day has started.","Energy is available sometimes. Then suddenly gone.","You push through. But the effort costs more than it returns.","You want to move. But something makes you stay still."],
+    lpSignal:"This is not about doing more. It is about restoring the rhythm that makes energy automatic.",
+    stripe:"https://buy.stripe.com/14A4gzgOk8tKaWd49Lf7i05",
+    eyebrow:"IKIRU — KI Reset",offerLabel:"The 7-Day KI Reset",resetName:"7-Day KI Reset",
+    days:[["Day 1","朝の光 — Morning light"],["Day 2","ラジオ体操 — Taiso"],["Day 3","姿勢 — Posture"],["Day 4","歩 — Walking"],["Day 5","動 — Daily movement"],["Day 6","森浴 — Forest bath"],["Day 7","気のリズム — Rhythm"]]
   },
-  min: {
-    kanji: "眠", name: "MIN", label: "Restoration", color: "#3A3055",
-    tagline: "You are sleeping the hours. You are not recovering during them.",
-    summary: "Your recovery system shows signs of deep sleep disruption. You are spending time in bed, but the restorative stage -- where the body repairs -- is being interrupted. Morning heaviness and slow cognitive start are the signals.",
-    pracTitle: "Turn off the lights. One hour before sleep.",
-    pracSteps: [
-      "Tonight: turn off all overhead lights one hour before you want to sleep. Lamps only.",
-      "Run a warm bath or shower for 10 minutes. No phone. No rushing.",
-      "After: move at half speed. Dim the home. The evening has officially begun."
+  min:{
+    kanji:"眠",name:"MIN",label:"Restoration",color:"#3A3055",
+    tagline:"You are sleeping the hours. You are not recovering during them.",
+    body:"You are spending time in bed, but the restorative stage — where the body repairs itself — is being interrupted. The cause is almost always the evening, not the night. The body was not prepared.",
+    wisdomJp:"眠りは、迎えるものだ。",
+    wisdomEn:"In Japan, sleep is not something you make. It is something you welcome.",
+    ritualName:"お風呂",ritualRomaji:"Ofuro · The Evening Bath",
+    step1:"Turn off all overhead lights one hour before sleep. Lamps only.",
+    ecLabel:"MIN Reset — your path",
+    rBgK:"眠",rJp:"お風呂",rRomaji:"Ofuro · The Evening Bath",
+    rHeadline:"In Japan, the bath is not for cleaning. It is for ending the day.",
+    catchJp:"眠りは、迎えるものだ。",
+    catchEn:"In Japan, sleep is not something you make. It is something you welcome.",
+    cultureBody:"In Japan, the practice of <strong>お風呂 (Ofuro)</strong> has existed for over a thousand years. You enter the bath after you have already washed. You enter to be warmed — and then to cool. To mark the close of the working self and the beginning of the resting self. The water is the door between the day and the night.",
+    culturePull:"Sleep does not arrive because you are tired enough. It arrives because the body has been given permission to stop.",
+    steps:[
+      {a:"Dim all lights one hour before sleep.",n:"Overhead off. Lamps only. Every bright light suppresses melatonin. This is not preference — it is biology."},
+      {a:"Run a warm bath. 40–41°C, 10–15 minutes.",n:"No phone in the bathroom. Step out slowly. Your body temperature is already dropping — the sleep signal has begun."},
+      {a:"Move at half-speed for the rest of the evening.",n:"In Japan this is called 夜の間 — the pace of the night. Every fast movement signals the day continues."}
     ],
-    afterPractice: "The temperature drop after a warm bath is the body's strongest sleep signal. The darkness tells the brain to begin producing melatonin. The body prepares before you even get into bed.",
-    h1gold: "You're sleeping the hours.", h1dim: "You're not recovering during them.",
-    herosub: "The restorative stage of sleep -- where the body repairs -- is being interrupted.",
-    heronote: "This is not insomnia. This is a MIN imbalance. And it is fixable without medication.",
-    truths: ["You sleep. But you wake up like you didn't.", "It takes hours for your mind to properly start.", "Deep rest feels like something that happens to other people.", "You're exhausted by evening. Then wide awake at midnight."],
-    signal: "This is not about sleeping more. It is about preparing the evening so the body can do what it already knows.",
-    eyebrow: "IKIRU - MIN Reset",
-    resetLabel: "Your 3-Minute MIN Reset",
-    resetTitle: "Turn off the lights. One hour before sleep.",
-    resetWhy: "The practice of the bath is not about getting clean.",
-    resetPull: "It is a door between the day and the night. The body learns to walk through it.",
-    resetName: "7-Day MIN Reset",
-    offerLabel: "The 7-Day MIN Reset",
-    days: [["Day 1","The bath"],["Day 2","Evening tea"],["Day 3","Dark room"],["Day 4","Floor rest"],["Day 5","Warm feet"],["Day 6","Afternoon rest"],["Day 7","Your sleep ritual"]]
+    signal:"That heaviness behind the eyes after the bath — the warmth in the body — is the sleep signal arriving on schedule. Repeated nightly, sleep stops being something you wait for. It becomes something the body prepares for.",
+    d1Label:"The 7-Day MIN Reset",
+    h1gold:"You're sleeping the hours.",h1dim:"You're not recovering during them.",h1rhythm:"Your body just lost its rhythm.",
+    herosub:"The restorative stage of sleep — where the body repairs — is being interrupted.",
+    heronote:"This is not insomnia. This is a MIN imbalance. And it is fixable without medication.",
+    truths:["You sleep. But you wake up like you didn't.","It takes hours for your mind to properly start.","Deep rest feels like something that happens to other people.","You're exhausted by evening. Then wide awake at midnight."],
+    lpSignal:"This is not about sleeping more. It is about preparing the evening so the body can do what it already knows.",
+    stripe:"https://buy.stripe.com/dRm9ATapWfWc1lD8q1f7i06",
+    eyebrow:"IKIRU — MIN Reset",offerLabel:"The 7-Day MIN Reset",resetName:"7-Day MIN Reset",
+    days:[["Day 1","お風呂 — The bath"],["Day 2","麦茶 — Evening tea"],["Day 3","暗闇 — Dark room"],["Day 4","畳 — Floor rest"],["Day 5","湯たんぽ — Warm feet"],["Day 6","居眠り — Afternoon rest"],["Day 7","眠りの式 — Sleep ritual"]]
   }
 };
 
-var currentQ = 0;
-var answers = [];
-var result = null;
+var cQ=0,ans=[],res=null;
 
-function showPage(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].classList.remove('active');
-  }
+function showPage(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
   document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
-  var sticky = document.getElementById('sticky-bar');
-  if (id !== 'p-lp') {
-    sticky.classList.remove('show');
-  }
+  window.scrollTo(0,0);
+  document.getElementById('sticky-bar').classList.toggle('show',id==='p-lp');
 }
 
-function startQuiz() {
-  currentQ = 0;
-  answers = [];
-  showPage('p-quiz');
-  renderQuestion();
+function startQuiz(){cQ=0;ans=[];showPage('p-quiz');renderQ()}
+
+function renderQ(){
+  var q=Q[cQ],tot=Q.length;
+  document.getElementById('quiz-counter').textContent=(cQ+1)+' / '+tot;
+  document.getElementById('q-label').textContent='Question '+(cQ+1);
+  document.getElementById('q-text').textContent=q.t;
+  var pb=document.getElementById('progress-bar');pb.innerHTML='';
+  for(var s=0;s<tot;s++){var sg=document.createElement('div');sg.className='progress-seg'+(s<cQ?' done':s===cQ?' active':'');pb.appendChild(sg)}
+  document.getElementById('btn-back').style.visibility=cQ===0?'hidden':'visible';
+  var ce=document.getElementById('choices');ce.innerHTML='';
+  var L=['A','B','C','D'];
+  q.c.forEach(function(ch,i){
+    var b=document.createElement('button');
+    b.className='choice-btn'+(ans[cQ]===i?' selected':'');
+    b.innerHTML='<span class="choice-letter">'+L[i]+'</span>'+ch.tx;
+    b.addEventListener('click',function(){pick(i)});
+    ce.appendChild(b);
+  });
 }
 
-function renderQuestion() {
-  var q = QUESTIONS[currentQ];
-  var total = QUESTIONS.length;
-  document.getElementById('quiz-counter').textContent = (currentQ + 1) + ' / ' + total;
-  document.getElementById('q-label').textContent = 'Question ' + (currentQ + 1);
-  document.getElementById('q-text').textContent = q.text;
-  document.getElementById('progress-fill').style.width = ((currentQ + 1) / total * 100) + '%';
-  document.getElementById('btn-back').style.visibility = (currentQ === 0) ? 'hidden' : 'visible';
-  document.getElementById('btn-next').style.display = 'none';
-  var choicesEl = document.getElementById('choices');
-  choicesEl.innerHTML = '';
-  var letters = ['A', 'B', 'C', 'D'];
-  for (var i = 0; i < q.choices.length; i++) {
-    (function(idx) {
-      var btn = document.createElement('button');
-      btn.className = 'choice-btn';
-      if (answers[currentQ] === idx) { btn.className += ' selected'; }
-      btn.innerHTML = '<span class="choice-letter">' + letters[idx] + '</span>' + q.choices[idx].text;
-      btn.addEventListener('click', function() { selectAnswer(idx); });
-      choicesEl.appendChild(btn);
-    })(i);
-  }
+function pick(i){
+  ans[cQ]=i;
+  var bs=document.querySelectorAll('.choice-btn');
+  bs.forEach(function(b){b.classList.remove('selected');b.style.pointerEvents='none'});
+  bs[i].classList.add('selected');
+  setTimeout(function(){bs.forEach(function(b){b.style.pointerEvents=''});nextQ()},320);
 }
 
-function selectAnswer(idx) {
-  answers[currentQ] = idx;
-  var btns = document.querySelectorAll('.choice-btn');
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].classList.remove('selected');
-  }
-  btns[idx].classList.add('selected');
-  document.getElementById('btn-next').style.display = 'flex';
+function nextQ(){
+  if(ans[cQ]===undefined)return;
+  if(cQ<Q.length-1){cQ++;renderQ()}else{analyse()}
 }
+function prevQ(){if(cQ>0){cQ--;renderQ()}}
 
-function goNext() {
-  if (answers[currentQ] === undefined) { return; }
-  if (currentQ < QUESTIONS.length - 1) {
-    currentQ++;
-    renderQuestion();
-  } else {
-    runAnalysis();
-  }
-}
-
-function goBack() {
-  if (currentQ > 0) {
-    currentQ--;
-    renderQuestion();
-  }
-}
-
-function runAnalysis() {
+function analyse(){
   showPage('p-loading');
-  var counts = { wa: 0, zen: 0, ki: 0, min: 0 };
-  for (var i = 0; i < answers.length; i++) {
-    var t = QUESTIONS[i].choices[answers[i]].type;
-    counts[t]++;
-  }
-  var primary = 'zen';
-  var maxCount = -1;
-  var types = ['wa', 'zen', 'ki', 'min'];
-  for (var j = 0; j < types.length; j++) {
-    if (counts[types[j]] > maxCount) {
-      maxCount = counts[types[j]];
-      primary = types[j];
-    }
-  }
-  var ranges = [[8,20],[26,40],[44,57],[62,70]];
-  var sorted = types.slice().sort(function(a, b) { return counts[b] - counts[a]; });
-  var scores = {};
-  for (var r = 0; r < sorted.length; r++) {
-    var lo = ranges[r][0];
-    var hi = ranges[r][1];
-    var c = counts[sorted[r]];
-    scores[sorted[r]] = lo + ((c * 13 + r * 11) % (hi - lo));
-  }
-  scores[primary] = Math.min(scores[primary], 20);
-  result = { primary: primary, scores: scores };
-  var ks = ['和', '禅', '気', '眠', '生'];
-  var ki = 0;
-  var iv = setInterval(function() {
-    document.getElementById('load-kanji').textContent = ks[ki % ks.length];
-    ki++;
-  }, 280);
-  setTimeout(function() {
+  var ct={wa:0,zen:0,ki:0,min:0};
+  ans.forEach(function(a,i){ct[Q[i].c[a].y]++});
+  var types=['wa','zen','ki','min'];
+  var pri=types.reduce(function(a,b){return ct[a]>=ct[b]?a:b});
+  var ranges=[[8,20],[26,40],[44,57],[62,70]];
+  var sorted=types.slice().sort(function(a,b){return ct[b]-ct[a]});
+  var sc={};
+  sorted.forEach(function(t,r){var lo=ranges[r][0],hi=ranges[r][1],c=ct[t];sc[t]=lo+((c*13+r*11)%(hi-lo))});
+  sc[pri]=Math.min(sc[pri],20);
+  res={primary:pri,scores:sc};
+  var ks=['和','禅','気','眠','生'],ki=0;
+  var iv=setInterval(function(){document.getElementById('load-kanji').textContent=ks[ki++%ks.length]},280);
+  setTimeout(function(){
     clearInterval(iv);
     buildScore();
     showPage('p-score');
-    setTimeout(function() { animateBars(); }, 300);
-  }, 2200);
+    setTimeout(animBars,300);
+  },2200);
 }
 
-function buildScore() {
-  var p = PILLAR[result.primary];
-  document.getElementById('score-kanji').textContent = p.kanji;
-  document.getElementById('score-type').innerHTML = p.name + ' — <em>' + p.label + '</em>';
-  document.getElementById('score-tagline').textContent = p.tagline;
-  document.getElementById('score-summary').textContent = p.summary;
-  document.getElementById('practice-title').textContent = p.pracTitle;
-  document.getElementById('after-text-content').textContent = p.afterPractice;
-  document.getElementById('badge-kanji').textContent = p.kanji;
-  document.getElementById('badge-type').textContent = p.name + ' — ' + p.label;
-  var stepsEl = document.getElementById('practice-steps');
-  stepsEl.innerHTML = '';
-  for (var i = 0; i < p.pracSteps.length; i++) {
-    var div = document.createElement('div');
-    div.className = 'practice-step';
-    div.innerHTML = '<span class="step-num">' + (i + 1) + '.</span><span class="step-text">' + p.pracSteps[i] + '</span>';
-    stepsEl.appendChild(div);
-  }
-  var cardsEl = document.getElementById('pillar-cards');
-  cardsEl.innerHTML = '';
-  var types = ['wa', 'zen', 'ki', 'min'];
-  var sortedTypes = types.slice().sort(function(a, b) {
-    if (a === result.primary) { return -1; }
-    if (b === result.primary) { return 1; }
-    return result.scores[a] - result.scores[b];
+function buildScore(){
+  var p=P[res.primary];
+  // Hero
+  document.getElementById('score-kanji').textContent=p.kanji;
+  document.getElementById('score-type').innerHTML=p.name+' — <em>'+p.label+'</em>';
+  document.getElementById('score-tagline').textContent=p.tagline;
+  document.getElementById('score-body').textContent=p.body;
+  // Wisdom + ritual
+  document.getElementById('sb-wisdom-jp').textContent=p.wisdomJp;
+  document.getElementById('sb-wisdom-en').textContent=p.wisdomEn;
+  document.getElementById('sb-ritual-name').textContent=p.ritualName;
+  document.getElementById('sb-ritual-romaji').textContent=p.ritualRomaji;
+  document.getElementById('sb-step1').textContent=p.step1;
+  // Email card
+  document.getElementById('ec-kanji').textContent=p.kanji;
+  document.getElementById('ec-label').textContent=p.ecLabel;
+  // Pillar cards
+  var ce=document.getElementById('pillar-cards');ce.innerHTML='';
+  var types=['wa','zen','ki','min'];
+  var st=types.slice().sort(function(a,b){return a===res.primary?-1:b===res.primary?1:res.scores[a]-res.scores[b]});
+  var bC={primary:'bp',secondary:'bs',recoverable:'br',fragile:'bf',stable:'bst'};
+  var bT={primary:'Primary',secondary:'Secondary',recoverable:'Needs attention',fragile:'Fragile',stable:'Stable'};
+  st.forEach(function(t){
+    var d=P[t],sc=res.scores[t],ip=t===res.primary;
+    var bk=ip?'primary':sc<=30?'secondary':sc<=45?'recoverable':sc<=60?'fragile':'stable';
+    var c=document.createElement('div');c.className='pc'+(ip?' pri':'');
+    c.innerHTML='<span class="pc-k" style="color:'+d.color+'">'+d.kanji+'</span><div class="pc-info"><div class="pc-name">'+d.name+' — '+d.label+'</div><div class="pc-bar"><div class="pc-fill" id="pf-'+t+'" style="background:'+d.color+'"></div></div></div><span class="pc-badge '+bC[bk]+'">'+bT[bk]+'</span>';
+    ce.appendChild(c);
   });
-  var badgeClass = { primary: 'badge-primary', secondary: 'badge-secondary', recoverable: 'badge-recoverable', fragile: 'badge-fragile', stable: 'badge-stable' };
-  var badgeText = { primary: 'Primary Disruption', secondary: 'Secondary', recoverable: 'Recoverable', fragile: 'Stable but Fragile', stable: 'Stable' };
-  var descText = { primary: 'Most disrupted -- start here', secondary: 'Secondary disruption', recoverable: 'Needs attention', fragile: 'Holding -- not thriving', stable: 'Within normal range' };
-  for (var j = 0; j < sortedTypes.length; j++) {
-    var type = sortedTypes[j];
-    var d = PILLAR[type];
-    var sc = result.scores[type];
-    var isPri = (type === result.primary);
-    var bk;
-    if (isPri) { bk = 'primary'; }
-    else if (sc <= 30) { bk = 'secondary'; }
-    else if (sc <= 45) { bk = 'recoverable'; }
-    else if (sc <= 60) { bk = 'fragile'; }
-    else { bk = 'stable'; }
-    var card = document.createElement('div');
-    card.className = 'pillar-card' + (isPri ? ' primary' : '');
-    card.innerHTML =
-      '<div class="pillar-card-top">' +
-        '<div class="pillar-card-left">' +
-          '<span class="pillar-kanji" style="color:' + d.color + '">' + d.kanji + '</span>' +
-          '<div><span class="pillar-code">' + d.name + '</span><span class="pillar-name">' + d.label + '</span></div>' +
-        '</div>' +
-        '<span class="pillar-badge ' + badgeClass[bk] + '">' + badgeText[bk] + '</span>' +
-      '</div>' +
-      '<div class="bar-track"><div class="bar-fill" id="bar-' + type + '" style="background:' + d.color + '"></div></div>' +
-      '<div class="pillar-foot"><span class="pillar-desc">' + descText[bk] + '</span><span class="pillar-pct" id="pct-' + type + '">-</span></div>';
-    cardsEl.appendChild(card);
-  }
 }
 
-function animateBars() {
-  var types = ['wa', 'zen', 'ki', 'min'];
-  for (var i = 0; i < types.length; i++) {
-    (function(type) {
-      var bar = document.getElementById('bar-' + type);
-      var pct = document.getElementById('pct-' + type);
-      if (!bar) { return; }
-      var target = result.scores[type];
-      bar.style.width = target + '%';
-      var n = 0;
-      var step = function() {
-        n = Math.min(n + 2, target);
-        if (pct) { pct.textContent = n + '%'; }
-        if (n < target) { requestAnimationFrame(step); }
-      };
-      setTimeout(step, 280);
-    })(types[i]);
-  }
-}
-
-function practiceDone() {
-  var ap = document.getElementById('after-practice');
-  ap.style.display = 'block';
-  var btn = document.getElementById('btn-practice-done');
-  btn.textContent = 'Showing your full reset...';
-  btn.disabled = true;
-  btn.style.opacity = '0.6';
-  setTimeout(function() {
-    document.getElementById('email-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function() {
-      var inp = document.getElementById('email-input');
-      if (inp) { inp.focus(); }
-    }, 600);
-  }, 400);
-}
-
-function unlockReport() {
-  var email = document.getElementById('email-input').value.trim();
-  var inp = document.getElementById('email-input');
-  if (!email || email.indexOf('@') === -1) {
-    inp.style.borderColor = '#8E3520';
-    inp.focus();
-    return;
-  }
-  try { localStorage.setItem('ikiru_email', email); } catch(e) {}
-
-  // Submit to Netlify Forms
-  var formData = new FormData();
-  formData.append('form-name', 'ikiru-subscribers');
-  formData.append('email', email);
-  formData.append('primary_disruption', result ? result.primary : 'unknown');
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(formData).toString()
-  }).catch(function() {});
-
-  buildLP();
-  showPage('p-lp');
-  initLPAnimations();
-}
-
-function buildLP() {
-  var p = PILLAR[result.primary];
-  document.getElementById('lp-bg-k').textContent = p.kanji;
-  document.getElementById('lp-eyebrow').textContent = p.eyebrow;
-  document.getElementById('lp-h1').innerHTML = '<span class="gold">' + p.h1gold + '</span><br><span class="dim">' + p.h1dim + '</span>';
-  document.getElementById('lp-sub').textContent = p.herosub;
-  document.getElementById('lp-note-strong').textContent = p.heronote;
-  var truthsEl = document.getElementById('lp-truths');
-  truthsEl.innerHTML = '';
-  for (var i = 0; i < p.truths.length; i++) {
-    var div = document.createElement('div');
-    div.className = 'lp-truth';
-    div.textContent = p.truths[i];
-    truthsEl.appendChild(div);
-  }
-  document.getElementById('lp-signal').textContent = p.signal;
-  document.getElementById('lp-reset-label').textContent = p.resetLabel;
-  document.getElementById('lp-reset-title').textContent = p.resetTitle;
-  document.getElementById('lp-reset-why').textContent = p.resetWhy;
-  document.getElementById('lp-reset-pull').textContent = p.resetPull;
-  document.getElementById('lp-reset-name').textContent = p.resetName;
-  document.getElementById('lp-vision-name').textContent = p.resetName;
-  document.getElementById('lp-offer-label').textContent = p.offerLabel;
-  document.getElementById('sticky-title').textContent = p.resetName + ' - $47';
-  var stepsEl = document.getElementById('lp-steps');
-  stepsEl.innerHTML = '';
-  for (var s = 0; s < p.pracSteps.length; s++) {
-    var stepDiv = document.createElement('div');
-    stepDiv.className = 'lp-step';
-    stepDiv.innerHTML = '<div class="lp-step-num">' + (s + 1) + '</div><div class="lp-step-body"><div class="lp-step-title">' + (s === 0 ? p.pracTitle : '') + '</div><div class="lp-step-desc">' + p.pracSteps[s] + '</div></div>';
-    stepsEl.appendChild(stepDiv);
-  }
-  var daysEl = document.getElementById('lp-days');
-  daysEl.innerHTML = '';
-  for (var d = 0; d < p.days.length; d++) {
-    var dayDiv = document.createElement('div');
-    dayDiv.className = 'day-row';
-    dayDiv.innerHTML = '<span class="day-n">' + p.days[d][0] + '</span><span class="day-name">' + p.days[d][1] + '</span>';
-    daysEl.appendChild(dayDiv);
-  }
-}
-
-function initLPAnimations() {
-  var vlines = ['vl1','vl2','vl3','vl4','vl5','vl6'];
-  var vbox = document.getElementById('vision-box');
-  if (!vbox) { return; }
-  var obs = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) {
-      for (var i = 0; i < vlines.length; i++) {
-        (function(idx) {
-          setTimeout(function() {
-            var el = document.getElementById(vlines[idx]);
-            if (el) { el.classList.add('lit'); }
-          }, idx * 180);
-        })(i);
-      }
-      obs.disconnect();
-    }
-  }, { threshold: 0.3 });
-  obs.observe(vbox);
-  var hero = document.querySelector('.lp-hero');
-  var sticky = document.getElementById('sticky-bar');
-  if (hero && sticky) {
-    var heroObs = new IntersectionObserver(function(entries) {
-      if (!entries[0].isIntersecting) {
-        sticky.classList.add('show');
-      } else {
-        sticky.classList.remove('show');
-      }
-    }, { threshold: 0 });
-    heroObs.observe(hero);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('btn-start').addEventListener('click', startQuiz);
-  document.getElementById('btn-next').addEventListener('click', goNext);
-  document.getElementById('btn-back').addEventListener('click', goBack);
-  document.getElementById('btn-practice-done').addEventListener('click', practiceDone);
-  document.getElementById('btn-unlock').addEventListener('click', unlockReport);
-  document.getElementById('email-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { unlockReport(); }
+function animBars(){
+  ['wa','zen','ki','min'].forEach(function(t){
+    var f=document.getElementById('pf-'+t);
+    if(!f)return;
+    var tg=res.scores[t],n=0;
+    f.style.width=tg+'%';
+    setTimeout(function step(){n=Math.min(n+2,tg);if(n<tg)requestAnimationFrame(step)},280);
   });
+}
+
+function unlock(){
+  var email=document.getElementById('email-input').value.trim();
+  var inp=document.getElementById('email-input');
+  if(!email||email.indexOf('@')===-1){inp.style.borderColor='#8E3520';inp.focus();return}
+  var fd=new FormData();
+  fd.append('form-name','ikiru-subscribers');
+  fd.append('email',email);
+  fd.append('primary_disruption',res?res.primary:'unknown');
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()}).catch(function(){});
+  buildReset();
+  showPage('p-reset');
+}
+
+function buildReset(){
+  var p=P[res.primary];
+  document.getElementById('r-bg-k').textContent=p.rBgK;
+  document.getElementById('r-jp').textContent=p.rJp;
+  document.getElementById('r-romaji').textContent=p.rRomaji;
+  document.getElementById('r-headline').textContent=p.rHeadline;
+  document.getElementById('r-catch-jp').textContent=p.catchJp;
+  document.getElementById('r-catch-en').textContent=p.catchEn;
+  document.getElementById('r-culture-body').innerHTML=p.cultureBody;
+  document.getElementById('r-culture-pull').textContent=p.culturePull;
+  document.getElementById('r-signal-text').textContent=p.signal;
+  document.getElementById('r-d1-cta-label').textContent=p.d1Label;
+  var sl=document.getElementById('r-steps-list');sl.innerHTML='';
+  p.steps.forEach(function(s,i){
+    var d=document.createElement('div');d.className='r-step';
+    d.innerHTML='<div class="r-step-n">'+(i+1)+'</div><div><span class="r-step-action">'+s.a+'</span><span class="r-step-note">'+s.n+'</span></div>';
+    sl.appendChild(d);
+  });
+}
+
+function goLP(){
+  buildLP();showPage('p-lp');initLPAnim();
+}
+
+function buildLP(){
+  var p=P[res.primary];
+  document.getElementById('lp-bg-k').textContent=p.kanji;
+  document.getElementById('lp-eyebrow').textContent=p.eyebrow;
+  document.getElementById('lp-h1').innerHTML='<span class="gold">'+p.h1gold+'</span><br><span class="dim">'+p.h1dim+'</span><br><span class="rhythm">'+p.h1rhythm+'</span>';
+  document.getElementById('lp-sub').textContent=p.herosub;
+  document.getElementById('lp-note-strong').textContent=p.heronote;
+  var te=document.getElementById('lp-truths');te.innerHTML='';
+  p.truths.forEach(function(t){var d=document.createElement('div');d.className='lp-truth';d.textContent=t;te.appendChild(d)});
+  document.getElementById('lp-signal').textContent=p.lpSignal;
+  document.getElementById('lp-offer-label').textContent=p.offerLabel;
+  document.getElementById('sticky-title').textContent=p.resetName+' · $47';
+  document.getElementById('lp-cta-btn').href=p.stripe;
+  var btnBottom=document.getElementById('lp-cta-btn-bottom');if(btnBottom)btnBottom.href=p.stripe;
+  document.getElementById('sticky-cta').href=p.stripe;
+  document.getElementById('lp-vision-name').textContent=p.resetName;
+  var de=document.getElementById('lp-days');de.innerHTML='';
+  p.days.forEach(function(d){var div=document.createElement('div');div.className='day-row';div.innerHTML='<span class="day-n">'+d[0]+'</span><span class="day-name">'+d[1]+'</span>';de.appendChild(div)});
+}
+
+function initLPAnim(){
+  var ids=['vl1','vl2','vl3','vl4','vl5','vl6'];
+  var vb=document.getElementById('vision-box');if(!vb)return;
+  new IntersectionObserver(function(e){
+    if(!e[0].isIntersecting)return;
+    ids.forEach(function(id,i){setTimeout(function(){var el=document.getElementById(id);if(el)el.classList.add('lit')},i*180)});
+  },{threshold:0.3}).observe(vb);
+  var hero=document.querySelector('.lp-hero'),sticky=document.getElementById('sticky-bar');
+  if(hero&&sticky)new IntersectionObserver(function(e){sticky.classList.toggle('show',!e[0].isIntersecting)},{threshold:0}).observe(hero);
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('btn-start').addEventListener('click',startQuiz);
+  document.getElementById('btn-back').addEventListener('click',prevQ);
+  document.getElementById('btn-unlock').addEventListener('click',unlock);
+  document.getElementById('btn-to-lp').addEventListener('click',goLP);
+  document.getElementById('email-input').addEventListener('keydown',function(e){if(e.key==='Enter')unlock()});
 });
 </script>
 
